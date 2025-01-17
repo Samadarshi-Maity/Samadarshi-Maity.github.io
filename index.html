@@ -1,0 +1,170 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Personal Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif; /* Set a clean, professional font */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light grey background for overall page */
+            color: #333; /* Dark text color for readability */
+            display: flex;
+            height: 100vh; /* Ensure full-height layout */
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Container holding left and right sections */
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Left Section Styles */
+        .left-section {
+            width: 25%; /* 25% width for the left section */
+            background-color: #2E8B57; /* Professional green background */
+            color: white; /* White text color for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        /* Profile picture in the left section */
+        .left-section img {
+            width: 70%; /* Scale image to fit neatly */
+            height: auto;
+            border-radius: 50%; /* Circular image */
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better appearance */
+        }
+
+        /* Name styling in the left section */
+        .left-section h1 {
+            margin: 0.5rem 0;
+            font-size: 1.8rem;
+        }
+
+        /* Links in the left section */
+        .left-section a {
+            color: white; /* White links for visibility */
+            text-decoration: none; /* Remove underline */
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        /* Hover effect for links */
+        .left-section a:hover {
+            text-decoration: underline;
+            color: #FFDE59; /* Highlight color on hover */
+        }
+
+        /* Right Section Styles */
+        .right-section {
+            width: 75%; /* 75% width for the right section */
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Subsections in the right section */
+        .top-subsection, .bottom-subsection {
+            padding: 1rem;
+            background: white; /* Clean white background for contrast */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            margin: 1rem;
+            border-radius: 8px; /* Rounded corners for elegance */
+        }
+
+        /* Top subsection styling */
+        .top-subsection {
+            flex: 3; /* 60% height allocation */
+        }
+
+        /* Bottom subsection styling */
+        .bottom-subsection {
+            flex: 2; /* 40% height allocation */
+        }
+
+        /* Header styling for sections */
+        .top-subsection h2, .bottom-subsection h2 {
+            color: #2E8B57; /* Match left section color */
+            margin-bottom: 1rem;
+        }
+
+        /* Project links styling */
+        .project-links a {
+            color: #2E8B57; /* Consistent link color */
+            text-decoration: none;
+            display: block; /* Block for better spacing */
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        /* Hover effect for project links */
+        .project-links a:hover {
+            text-decoration: underline;
+            color: #FF4500; /* Orange color on hover */
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Stack sections vertically */
+            }
+            .left-section {
+                width: 100%;
+                height: auto;
+                padding: 1rem 0;
+            }
+            .right-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+        <!-- Profile Picture -->
+        <img src="path/to/your/photo.jpg" alt="Your Name's Picture">
+        
+        <!-- Name -->
+        <h1>Your Name</h1>
+        
+        <!-- Contact Links -->
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Group Website</a>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+        <!-- Top Subsection: Introduction -->
+        <div class="top-subsection">
+            <h2>About Me</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel tortor nisi. Aliquam erat volutpat. 
+                Replace this with your personal information: where you're from, what you do, and what you're passionate about.
+            </p>
+        </div>
+
+        <!-- Bottom Subsection: Projects -->
+        <div class="bottom-subsection">
+            <h2>My Projects</h2>
+            <div class="project-links">
+                <a href="#" target="_blank">Project Name 1</a>
+                <a href="#" target="_blank">Project Name 2</a>
+                <a href="#" target="_blank">Project Name 3</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
