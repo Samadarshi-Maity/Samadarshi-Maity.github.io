@@ -16,13 +16,13 @@ minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Samadarshi Maity"
+title                    : "My Personal Website"
 title_separator          : "-"
 name                     : "Samadarshi Maity"
-description              : " Samadarshi Personal Website"
+description              : "Samadarshi Maity"
 url                      : "https://samadarshi-maity.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : matthewkirby/matthewkirby.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : Samadarshi-Maity/Samadarshi-Maity.github.io # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -266,7 +266,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: false
+      read_time: true
       comments: false
       share: false
       related: false
