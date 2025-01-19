@@ -9,7 +9,7 @@ redirect_from:
 classes: wide
 ---
 
-#<img src="../images/cluster_banner.png"><br clear="left">
+#<img src="../images/cluster_banner.png"><br clear="left", width="50" ,height="50>
 
 Hello!! Thank you for stopping by. I am Samadarshi ( pronounced as some-other-she…) and I am  a doctoral researcher at University of Leiden in Netherlands. My research work primarily focuses on the experimental investigation of the polar fluids that are driven out of equilibrium through an 'active' drive.  These fluids comprise of rolling micro-particles that 'flow' together hence termed 'polar, active fluid'. If two or more of these active fluids are mixed, they can homogeneously mix or phase-separate based on how we confine them causing formation of rich multicomponent phases unique to such non-equilibrium systems. 
 
@@ -22,7 +22,7 @@ Outside work, you can find me read a book at a quiet corner, or playing my class
 Please feel free to connect with me if you have any questions or if you have anything of mutual interests. 
 
 
-#<! -- Add separate sections in for personal and professional introduction -->
+// #<! -- Add separate sections in for personal and professional introduction -->
 
 
 
