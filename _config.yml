@@ -7,7 +7,6 @@
 # server process.
 # set the skin 
 
-minimal_mistakes_skin    : "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 # Basic Site Settings
 locale                   : "en-US"
 title                    : "Samadarshi Maity"
