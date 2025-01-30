@@ -5,7 +5,6 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
-# set the skin 
 
 # Basic Site Settings
 locale                   : "en-US"
@@ -30,7 +29,7 @@ author:
   employer         : "Leiden University"
   uri              : # URL
   email            : "samadarshi.maity@gmail.com" 
-
+  
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=Z3JPTToAAAAJ&hl"
@@ -59,7 +58,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : samadarshi-maity-9621b6115/
+  linkedin         : "samadarshi-maity-9621b6115/"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
