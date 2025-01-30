@@ -1,13 +1,25 @@
-# main links
-# main links
+# The following is the order of the links in the header of the website.
+#
+# Changing the order here will adjust the order and you can also add additional
+# links. Removing a link prevents it from showing in the header, but does not
+# prevent it from being included in the site.
+
 main:
-  - title: "Research"
-    url: /research/
+
+  - title: "Portfolio"
+    url: /portfolio/
+
   - title: "CV"
     url: /cv/
-  - title: "Projects"
-    url: /projects/
-  - title: "Blogs"
-    url: /blogs/
+
+  - title: "Research"
+    url: /research/
+
   - title: "Contact"
-    url: /contact/
+    url: /contact/     
+        
+  - title: "Blog Posts"
+    url: /year-archive/
+    
+  - title: "Guide"
+    url: /markdown/
