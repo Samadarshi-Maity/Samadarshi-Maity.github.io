@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: " A brief summary of my work ..."
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,6 +8,9 @@ redirect_from:
 ---
 
 {% include base_path %}
+
+
+
 
 Education
 ======
