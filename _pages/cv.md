@@ -8,17 +8,19 @@ redirect_from:
 ---
 
 {% include base_path %}
-\\
+
 \\
 
 
-Education
+
+
+## Education
 ======
 * Ph.D   : Leiden University, Non-Equilibrium Statistical Physics,  (2021 -Present)
 * M.Sc.  : Delft Univerity of Technology,  Chemical Engineering, (2019 - 2021)
 * B.Chem : Institute of Chemical Technology - Mumbai, Chemical Engineering, (2015 - 2019)
 
-Internship and Work Projects 
+## Internship and Work Projects 
 ======
 * Spring 2024: Academic Pages Collaborator
   * Github University
@@ -35,7 +37,7 @@ Internship and Work Projects
   * Duties included: Tagging issues
   * Supervisor: Professor Git
   
-Skills
+## Skills
 ======
 * Skill 1
 * Skill 2
@@ -44,24 +46,24 @@ Skills
   * Sub-skill 2.3
 * Skill 3
 
-Publications
+## Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+## Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
   {% endfor %}</ul>
   
-Teaching
+## Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
+## Service and leadership
 ======
 * Currently signed in to 43 different slack teams
