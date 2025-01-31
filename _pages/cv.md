@@ -11,11 +11,11 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D   : Leiden University, Non-Equilibrium Statistical Physics,  (2021 -Present)
+* M.Sc.  : Delft Univerity of Technology,  Chemical Engineering, (2019 - 2021)
+* B.Chem : Institute of Chemical Technology - Mumbai, Chemical Engineering, (2015 - 2019)
 
-Work experience
+Internship and Work Projects 
 ======
 * Spring 2024: Academic Pages Collaborator
   * Github University
