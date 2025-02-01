@@ -6,7 +6,54 @@ excerpt: "Some lesser known facts about the Dutch real estate inferred from the 
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+/* this is where the section starts */
 <img src="/images/housing/house_vsapp.png" 
 	alt="Image description" width="50", height = "50">
     <figcaption>This is the image caption.</figcaption>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Images Side by Side</title>
+    <style>
+        /* Container to hold images side by side */
+        .image-container {
+            display: flex; /* Places images side by side */
+            justify-content: center; /* Centers images horizontally */
+            align-items: center; /* Aligns images vertically */
+            width: 90%; /* Adjust width as needed */
+            max-width: 900px; /* Prevents excessive stretching */
+            border: 1px solid black; /* Border around both images */
+            padding:1px; /* Adds space inside the border */
+            box-sizing: border-box; /* Ensures padding doesn’t increase size */
+            margin:10px auto; /* Centers the container */
+        }
+
+        /* Styling for images inside the container */
+        .image-container img {
+            width: 50%; /* Ensures images fit inside the container */
+            height: auto; /* Keeps aspect ratio */
+            padding: 1px; /* Adds space between images */
+        }
+
+        /* Responsive: Ensure images stay side by side on large screens */
+        @media (max-width: 600px) {
+            .image-container {
+                flex-direction: column; /* Stacks images on small screens */
+                width: 90%;
+            }
+            .image-container img {
+                width: 100%; /* Full width when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Two Images Side by Side</h2>
+
+    <div class="image-container">
+        <img src="/images/housing/Price_m2_vs_year.png" alt="Price_m2_vs_year.png">
+        <img src="/images/housing/Price_vs_year.png" alt="Price_m2_vs_year.png">
+    </div>
+
+</body>
