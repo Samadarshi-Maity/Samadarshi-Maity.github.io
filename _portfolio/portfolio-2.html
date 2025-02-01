@@ -65,7 +65,7 @@ collection: portfolio
 	<center>
 	<figure>
 
-	<img src ="/images/housing/house_vsapp.png" class="center" width = "150" height = 'auto' >
+	<img src ="/images/housing/house_vsapp.png" class="center" width = "50" height = 'auto' >
 	<figcaption> Fig 1: (%) composition of houses and apartments for sale (as of January 2025)
 	</figcaption>
 	</figure>
@@ -82,55 +82,62 @@ collection: portfolio
 	<figcaption style="text-align:center;" >Fig 2: a) Asking rate vs Year of Construction, b) Asking price vs Year of Construction.</figcaption>
 	</figure>
 	<p style="text-align:justify;">
-	Now, the next logical question is: how the prices of these houses are determined?  To understand this, I created a parity plot of Price vs Price per m2. 
-	To build a consistent parity, I 'scaled' the prices in aforementioned category by their respective maximum values leading to a number between 0 and 1 for each category. Then, the color of the datapoints have been chosen using a colormap that correspond to the value of any parameter of choice that I would like to find correlations of. This trick allows me to compare three parameters into a very simple 2D plot. 
+	The next logical question is how the prices of these houses are determined. To understand this, I created a parity plot of Price vs. Price per m2. 
+	To build a consistent parity, I 'scaled' the prices in an aforementioned category by their respective maximum values leading to a number between 0 and 1 for each category. Then, the color of the datapoints have been chosen using a colormap that correspond to the value of any parameter of choice that I would like to find correlations of. This trick allows me to compare three parameters into a very simple 2D plot. 
 	Using this I first investigated the dependency of the pricing on the “Living Space” (Fig 3(a)). Very Interesting and very surprisingly, I see that there is a direct and clear correlation between the asking prices, price per m2 (rate) and the living area. The colormap pattern (Fig 3 (a)) shows that  price per m2 is computed by directly dividing the asking price by the living area where color bar represent the living are in m2.
 	</p> 
  
-	<!.........  this is a standard template for the images I will add>
+	<!.........  This is a standard template for the images I will add>
 	<figure>
     <div class="image-container">
         <img src="/images/housing/parity_living_area.png" alt="parity_living_area.png">
         <img src="/images/housing/parity_plot_area.png" alt="parity_plot_area.png">
-	<img src="/images/housing/parity_external_storage.png" alt="parity_external_storage.png">
     </div>
-	<figcaption style="text-align:center;" >Fig 3: a) Parity plot with data colored according to Living Area, b) Parity plot with data colored according to Total Plot Area, c) Parity plot with data colored according to the External Storage Space.</figcaption>
+	<figcaption style="text-align:center;" >Fig 3: a) Parity plot with data colored according to Living Area, b) Parity plot with data colored according to Total Plot Area, </figcaption>
 	</figure>
 
+	<center>
+	<figure>
+	<img src="/images/housing/parity_external_storage.png" alt="parity_external_storage.png">
+	<figcaption> Fig 4: Parity plot with data colored according to the External Storage Space.
+	</figcaption>
+	</figure>
+	</center>
+	
 	<p style="text-align:justify;" > 
-	What as even more surprising that there is NO correlation in case of total plot area (see fig 3(b)). This is very counterintuitive as we may think that cost would correspond to the land we buy (which is typically in my country of origin -India) and many other countries. Some of you might point out that there some correlation for smaller plot areas … to which I agree because they typically correspond to apartments (not bungalows) with smaller area which of course have no extra area other than the living area.
+	What is even more surprising is that there is NO correlation in the case of the total plot area (see fig 3(b)). This is very counterintuitive as we may think that the cost would correspond to the land we buy (which is typically in my country of origin -India) and many other countries. Some of you might point out that there some correlation for smaller plot areas … to which I agree because they typically correspond to apartments (not bungalows) with smaller area which of course have no extra area other than the living area.
 	</p> 
 	
 	<p style="text-align:justify;">
-	Furthermore, I would like to have a house with some extra space outside to do barbeque in a nice weather, sit in the sun or park my car (if I buy it some day …). It seems that getting this extra space is purely based on luck as can be observed from the fig 3(c). which again shows no correlation in the external storage space.
+	Furthermore, I would like to have a house with some extra space outside to do barbeque in nice weather, sit in the sun or park my car (if I buy it some day …). It seems that getting this extra space is purely based on luck as can be observed from the fig 3(c). which again shows no correlation in the external storage space.
 	</p>
 	
 	<p style="text-align:justify;" >
-	Moving on, in case of the house contents, as expected the price of the house increases with more amenities like extra rooms, bathrooms, toilets etc. (see fig 4(b)). However, what caught my attention when I plotted the same data now w.r.t. the price per m2 as shown in fig. 4(a). 
+	Moving on, in the case of the house contents, as expected the price of the house increases with more amenities like extra rooms, bathrooms, toilets, etc. (see fig 4(b)). However, what caught my attention when I plotted the same data now w.r.t. the price per m2 as shown in fig. 4(a). 
 	</p> 
-	<!.........  this is a standard template for the images I will add>
+	<!.........  This is a standard template for the images I will add>
 	<figure>
     <div class="image-container">
         <img src="/images/housing/price_m2_vs_rooms.png" alt="parity_living_area.png">
         <img src="/images/housing/price_vs_rooms.png" alt="price_vs_rooms.png">
     </div>
-	<figcaption style="text-align:center;" > Fig 4: a) Variation of Asking rate with Room specifications, b) Variation of total price with room specifications.</figcaption>
+	<figcaption style="text-align:center;" > Fig 5: a) Variation of Asking rate with Room specifications, b) Variation of the total price with room specifications.</figcaption>
 	</figure>
 	
 	<p style="text-align:justify;" > 
-	It seems that is economically rewarding to buy a house with more number of rooms as the price per m2 drops significantly as the number of rooms increase. This means one needs to pay proportionally less for every extra room. Thus, people with bigger budget have more benefit as they can purchase bigger property (more rooms) and pay proportionally less for the extra rooms, one of the stark realities of a capitalistic society. <br>
-	However, irrespective of the price, it is super expensive to have that extra bathroom or separate toilet . The asking prices and the asking rate both increase exponentially with the number of bathroom and toilets
+	It seems that is economically rewarding to buy a house with more number of rooms as the price per m2 drops significantly as the number of rooms increases. This means one needs to pay proportionally less for every extra room. Thus, people with bigger budget have more benefit as they can purchase bigger property (more rooms) and pay proportionally less for the extra rooms, one of the stark realities of a capitalistic society. <br>
+	However, irrespective of the price, it is super expensive to have that extra bathroom or separate toilet. The asking prices and the asking rate both increase exponentially with the number of bathroom and toilets
 	</p> 
 	
 	<center>
 	<figure>
-	<img src ="/images/housing/price_vs_floors.png" width = "300" height = 'auto'>
-	<figcaption> Fig 5: Mean Asking price vs Number of floors
+	<img src ="/images/housing/price_vs_floors.png" width = "100" height = 'auto'>
+	<figcaption> Fig 6: Mean Asking price vs Number of floors
 	</figcaption>
 	</figure>
 	</center>
 	<p style="text-align:justify;" > 
-	Also, the price of the house increase somewhat with the number of floors but after 5 floors, the prices actually  drop. I am still trying to figure out why …  One possibility is that sometimes the listing website lists the number of floors and the floor number at the same position which might make this data a bit controversial... If you find some insight feel free to ping me:).
+	Also, the price of the house increases somewhat with the number of floors but after 5 floors, the prices actually  drop. I am still trying to figure out why …  One possibility is that sometimes the listing website lists the number of floors and the floor number at the same position which might make this data a bit controversial... If you find some insight feel free to ping me:).
 	</p>
 	
 	<p style="text-align:justify;" >
@@ -141,31 +148,31 @@ collection: portfolio
 	This splitting has two important reasons: 
 	</p>
 	<ul>
-	<li> First, 'Median Prices' are a better indicator of these trends since high or low prices and undesirably influence this statistics in these cases.
-	<li> Second, for most energy-labels, the data distribution is mostly lognormal, thus this method effectively treats the mean and the tails as different cases.
+	<li> First, 'Median Prices' are a better indicator of these trends since high or low prices and undesirably influence these statistics in these cases.
+	<li> Second, for most energy labels, the data distribution is mostly lognormal, thus this method effectively treats the mean and the tails as different cases.
 	</ul>
-	<!.........  this is a standard template for the images I will add>
+	<!.........  This is a standard template for the images I will add>
 	<figure>
     <div class="image-container">
         <img src="/images/housing/price_m2_vs_energy.png" alt="price_m2_vs_energy.png">
         <img src="/images/housing/price_vs_energy.png" alt="price_vs_energy.png">
     </div>
-	<figcaption style="text-align:center;" >Fig 5: a) Variation of Asking rate with Energy Label, b) Variation of total price with Energy Label.</figcaption>
+	<figcaption style="text-align:center;" >Fig 7: a) Variation of Asking rate with Energy Label, b) Variation of total price with Energy Label.</figcaption>
 	</figure>
 	
 	<p style="text-align:justify;" >
-	Fig 5(a) compares the mean price per m2 (rate) to the energy label. The data is divided into cost above or below 10k euros/m2 to represent houses in expensive location (where price pr m2 is generally high) or higher-end houses (better equipped and maintained houses) vs cheaper localities or low-end houses. 
-	To my surprise, for the lesser cost per m2, better energy label means more price per m2 but there is no dependance for the more expensive pricing. 
+	Fig 5(a) compares the mean price per m2 (rate) to the energy label. The data is divided into costs above or below 10k euros/m2 to represent houses in expensive locations (where price pr m2 is generally high) or higher-end houses (better equipped and maintained houses) vs cheaper localities or low-end houses. 
+	To my surprise, for the lesser cost per m2, a better energy label means more price per m2 but there is no dependence for the more expensive pricing. 
 	</p>
 	
 	<p style="text-align:justify;" > 
-	Similarly, for if we now compare the average asking price, I have split the data between those priced over '1 million euros' and those below. Apart from statistical relevance, those above 1 million are nearly impossible for first-time-buyers to purchase and even for upper-middle class household and you need more than a good salary to buy them (generational wealth??). <br>
+	Similarly, if we now compare the average asking price, I have split the data between those priced over '1 million' euros and those below. Apart from statistical relevance, those above 1 million are nearly impossible for first-time buyers to purchase and even for upper-middle class households and you need more than a good salary to buy them (generational wealth??). <br>
 	
-	Again, we see a similar trend where the affordable houses (less than 1 million) are more expensive in general if it is of better energy label. This will discourage people to opt for sustainable (energy efficient) houses even though the mortgage rates are lower for them as they end up paying the same monthly amount (due to higher asking price). 
+	Again, we see a similar trend where affordable houses (less than 1 million) are more expensive in general if it is of better energy label. This will discourage people to opt for sustainable (energy efficient) houses even though the mortgage rates are lower for them as they end up paying the same monthly amount (due to the higher asking price). 
 	</p>
 	
 	<p style="text-align:justify;" > 
-	To conclude, I did learn very surprising trends in the housing market. To summarise them: cheaper houses are more likely to  be older and of lower energy label. Very expensive abodes will more likely be new and may/may-not be energy efficient. More rooms mean more price efficiency while more toilets mean less price efficiency. Finally,    <i>'een schuur of een tuin wordt een bonus'</i>... you can see that, you are most likely not priced for them (so good and bad at the same time based on which end of the market segment you are). 
+	To conclude, I did learn very surprising trends in the housing market. To summarise: cheaper houses are more likely to  be older and of lower energy label. Very expensive abodes will more likely be new and may/may-not be energy efficient. More rooms mean more price efficiency while more toilets mean less price efficiency. Finally,    <i>'een schuur of een tuin wordt een bonus'</i>... you can see that, you are most likely not priced for them (so good and bad at the same time based on which end of the market segment you are). 
 	And, thanks for reading patiently till the end ...
 	</p> 
 	
