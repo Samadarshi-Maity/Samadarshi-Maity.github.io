@@ -1,43 +1,71 @@
 ---
 title: "Interesting trends in the Dutch Real Estate"
-excerpt: "Some lesser known facts about the Dutch real estate inferred from the data that I scraped off a dutch house listing website.<br>
+excerpt: "Some lesser known facts about the Dutch real estate inferred from the data that I scraped off a Dutch house listing website.<br>
 <br>
 <img src='/images/housing/te-koop.png'>"
 collection: portfolio
 ---
 
-/* This is where the section starts */
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Two Images Side by Side</title>
     <style>
-        /* Container to hold images side by side */
+		/* Figure wrapper to center everything */
+        .image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the figure */
+            justify-content: center;
+            text-align: center; /* Ensures caption is centered */
+            margin-bottom: 10px; /* Adds spacing between groups */
+        }
+		
+        /* Container for images */
         .image-container {
-            display: flex; /* Places images side by side */
-            justify-content: center; /* Centers images horizontally */
-            align-items: center; /* Aligns images vertically */
-            width: 110%; /* Adjust width as needed */
+            display: flex; /* Align images in a row */
+            justify-content: center; /* Center images */
+            align-items: center; /* Align images vertically */
+            flex-wrap: wrap; /* Allows wrapping for responsiveness */
+            width: 100%; /* Adjusts width */
             max-width: 900px; /* Prevents excessive stretching */
-            border: 1px solid black; /* Border around both images */
-            padding:1px; /* Adds space inside the border */
+            border: 1px solid black; /* Border around the images */
+            padding: 1px; /* Space inside the border */
             box-sizing: border-box; /* Ensures padding doesn’t increase size */
-            margin:1px auto; /* Centers the container */
+            margin: 1px auto; /* Centers the container */
+            gap: 15px; /* Adds spacing between images */
+        }
+		
+        /* Single image layout */
+        .single-image .image-container img {
+            width: 40%;
+			height: auto;
+			padding: 1px;
+			/* Full width for single image */
+        }
+        /* Styling for images */
+        .two-columns .image-container img {
+            width:45%; /* Two-column layout by default */
+            height: auto; /* Maintains aspect ratio */
+            padding: 1px; /* Adds spacing around images */
         }
 
-        /* Styling for images inside the container */
-        .image-container img {
-            width: 50%; /* Ensures images fit inside the container */
-            height: auto; /* Keeps aspect ratio */
-            padding: 1px; /* Adds space between images */
+        /* Three-column layout */
+        .three-columns .image-container img {
+            width: 30%; /* Three images per row */
+			height: auto; /* Maintains aspect ratio */
+            padding: 1px; /* Adds spacing around images */
+        }
+		/* Caption styling */
+        .image-caption {
+            font-style: italic;
+            color: black;
+            margin-top: 10px; /* Adds spacing above the caption */
+            font-size: 0.9em;
         }
 
-        /* Responsive: Ensure images stay side by side on large screens */
+        /* Responsive: Stack images on smaller screens */
         @media (max-width: 600px) {
-            .image-container {
-                flex-direction: column; /* Stacks images on small screens */
-                width: 90%;
-            }
             .image-container img {
                 width: 100%; /* Full width when stacked */
             }
@@ -48,7 +76,7 @@ collection: portfolio
 
 	<h3> The premise ... </h3>
 	<p style="text-align:justify;">
-	With my plan to settle long term in Netherlands at the back of my mind, I quickly realized that owning house as an asset in Netherlands will not only provide a stable abode but also can be an asset for long term. However, after reading blogs/articles quite a bit, about the whole housing situation in Netherlands, I realized the sad truth behind what one of my work colleague joking said, 'Samadarshi, you will need more than a lifetime of savings to buy a house here which someone previously bought with money worth two chickens and a sack of potato'.
+	With my plan to settle long-term in the Netherlands at the back of my mind, I quickly realized that owning house as an asset in Netherlands will not only provide a stable abode but also can be an asset for long term. However, after reading blogs/articles quite a bit, about the whole housing situation in Netherlands, I realized the sad truth behind what one of my work colleague joking said, 'Samadarshi, you will need more than a lifetime of savings to buy a house here which someone previously bought with money worth two chickens and a sack of potato'.
 	</p>
 	
 	<p style="text-align:justify;">
@@ -60,26 +88,25 @@ collection: portfolio
 	</p>
 	
 	<p style="text-align:justify;">
-	Well, that being said…  I will summarize here few of my key findings and of course you are very welcome to have a look into the data from my repo as well.  First, little less than half of the listed houses are ‘apartments’ and the majority of them are bungalow houses (see Fig 1). 
+	Well, that being said…  I will summarize here a few of my key findings and of course, you are very welcome to have a look into the data from my repo as well.  First, little less than half of the listed houses are ‘apartments’ and the majority of them are bungalow houses (see Fig 1). 
 	</p>
-	<center>
-	<figure>
 
-	<img src ="/images/housing/house_vsapp.png" class="center" width = "50" height = '50' >
-	<figcaption> Fig 1: (%) composition of houses and apartments for sale (as of January 2025)
-	</figcaption>
-	</figure>
-	</center>
+	<figure class="image-wrapper single-image">
+        	<div class="image-container">
+            		<img src ="Plots/house_vsapp.png" class="center" >
+        	</div>
+        	<figcaption class="image-caption">Fig 1: (%) composition of houses and apartments for sale (as of January 2025).</figcaption>
+    	</figure>
 	
 	<p style="text-align:justify;">
-	There are really old houses in Netherlands that are currently being sold.  By old, I mean from the 16th century (historical ones). On average the Price and Price/m2 ( Fig 2(a) and (b) resp.) is on average lower of older houses. Also, the costliest houses are the most recently build (red dots in those figures)
+	There are very old houses in the Netherlands that are currently being sold.  By old, I mean from the 16th century (historical ones). On average the Price and Price/m2 ( Fig 2(a) and (b) resp.) is on average lower of older houses. Also, the costliest houses are the most recently build (red dots in those figures)
 	</p>
-    <figure>
-    <div class="image-container">
-        <img src="/images/housing/Price_m2_vs_year.png" alt="Price_m2_vs_year.png">
-        <img src="/images/housing/Price_vs_year.png" alt="Price_m2_vs_year.png">
-    </div>
-	<figcaption style="text-align:center;" >Fig 2: a) Asking rate vs Year of Construction, b) Asking price vs Year of Construction.</figcaption>
+ 	<figure class="image-wrapper two-columns">
+    		<div class="image-container">
+        		<img src="Plots/Price_m2_vs_year.png" alt="Price_m2_vs_year.png">
+        		<img src="Plots/Price_vs_year.png" alt="Price_m2_vs_year.png">
+    		</div>
+		<figcaption class="image-caption"> Fig 2: a) Asking rate vs Year of Construction, b) Asking price vs Year of Construction.</figcaption>
 	</figure>
 	<p style="text-align:justify;">
 	The next logical question is how the prices of these houses are determined. To understand this, I created a parity plot of Price vs. Price per m2. 
@@ -88,21 +115,14 @@ collection: portfolio
 	</p> 
  
 	<!.........  This is a standard template for the images I will add>
-	<figure>
-    <div class="image-container">
-        <img src="/images/housing/parity_living_area.png" alt="parity_living_area.png">
-        <img src="/images/housing/parity_plot_area.png" alt="parity_plot_area.png">
-    </div>
-	<figcaption style="text-align:center;" >Fig 3: a) Parity plot with data colored according to Living Area, b) Parity plot with data colored according to Total Plot Area, </figcaption>
+	<figure class="image-wrapper three-columns">
+    		<div class="image-container">
+        		<img src="Plots/parity_living_area.png" alt="parity_living_area.png">
+        		<img src="Plots/parity_plot_area.png" alt="parity_plot_area.png">
+			<img src="Plots/parity_external_storage.png" alt="parity_external_storage.png">
+    		</div>
+		<figcaption class="image-caption"> Fig 3: a) Parity plot with data colored according to Living Area, b) Parity plot with data colored according to Total Plot Area, c) Parity plot with data colored according to the External Storage Space.</figcaption>
 	</figure>
-
-	<center>
-	<figure>
-	<img src="/images/housing/parity_external_storage.png" alt="parity_external_storage.png">
-	<figcaption> Fig 4: Parity plot with data colored according to the External Storage Space.
-	</figcaption>
-	</figure>
-	</center>
 	
 	<p style="text-align:justify;" > 
 	What is even more surprising is that there is NO correlation in the case of the total plot area (see fig 3(b)). This is very counterintuitive as we may think that the cost would correspond to the land we buy (which is typically in my country of origin -India) and many other countries. Some of you might point out that there some correlation for smaller plot areas … to which I agree because they typically correspond to apartments (not bungalows) with smaller area which of course have no extra area other than the living area.
@@ -116,12 +136,12 @@ collection: portfolio
 	Moving on, in the case of the house contents, as expected the price of the house increases with more amenities like extra rooms, bathrooms, toilets, etc. (see fig 4(b)). However, what caught my attention when I plotted the same data now w.r.t. the price per m2 as shown in fig. 4(a). 
 	</p> 
 	<!.........  This is a standard template for the images I will add>
-	<figure>
-    <div class="image-container">
-        <img src="/images/housing/price_m2_vs_rooms.png" alt="parity_living_area.png">
-        <img src="/images/housing/price_vs_rooms.png" alt="price_vs_rooms.png">
-    </div>
-	<figcaption style="text-align:center;" > Fig 5: a) Variation of Asking rate with Room specifications, b) Variation of the total price with room specifications.</figcaption>
+	<figure class="image-wrapper two-columns">
+    		<div class="image-container">
+       	 		<img src="Plots/price_m2_vs_rooms.png" alt="parity_living_area.png">
+        		<img src="Plots/price_vs_rooms.png" alt="price_vs_rooms.png">
+    		</div>
+	<figcaption class="image-caption" > Fig 4: a) Variation of Asking rate with Room specifications, b) Variation of total price with room specifications.</figcaption>
 	</figure>
 	
 	<p style="text-align:justify;" > 
@@ -129,13 +149,13 @@ collection: portfolio
 	However, irrespective of the price, it is super expensive to have that extra bathroom or separate toilet. The asking prices and the asking rate both increase exponentially with the number of bathroom and toilets
 	</p> 
 	
-	<center>
-	<figure>
-	<img src ="/images/housing/price_vs_floors.png" width = 'auto' height = '50'>
-	<figcaption> Fig 6: Mean Asking price vs Number of floors
+	<figure class="image-wrapper single-image">
+		<div class="image-container">
+			<img src ="Plots/price_vs_floors.png">
+        	</div>
+	<	figcaption class="image-caption"> Fig 5: Mean Asking price vs Number of floors
 	</figcaption>
 	</figure>
-	</center>
 	<p style="text-align:justify;" > 
 	Also, the price of the house increases somewhat with the number of floors but after 5 floors, the prices actually  drop. I am still trying to figure out why …  One possibility is that sometimes the listing website lists the number of floors and the floor number at the same position which might make this data a bit controversial... If you find some insight feel free to ping me:).
 	</p>
@@ -152,12 +172,12 @@ collection: portfolio
 	<li> Second, for most energy labels, the data distribution is mostly lognormal, thus this method effectively treats the mean and the tails as different cases.
 	</ul>
 	<!.........  This is a standard template for the images I will add>
-	<figure>
-    <div class="image-container">
-        <img src="/images/housing/price_m2_vs_energy.png" alt="price_m2_vs_energy.png">
-        <img src="/images/housing/Price_vs_energy.png" alt="Price_vs_energy.png">
-    </div>
-	<figcaption style="text-align:center;" >Fig 7: a) Variation of Asking rate with Energy Label, b) Variation of total price with Energy Label.</figcaption>
+	<figure class="image-wrapper two-columns">
+    	<div class="image-container">
+        <img src="Plots/price_m2_vs_energy.png" alt="price_m2_vs_energy.png">
+        <img src="Plots/Price_vs_energy.png" alt="price_vs_energy.png">
+    	</div>
+	<figcaption class="image-caption"> Fig 5: a) Variation of Asking rate with Energy Label, b) Variation of total price with Energy Label.</figcaption>
 	</figure>
 	
 	<p style="text-align:justify;" >
