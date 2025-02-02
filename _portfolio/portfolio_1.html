@@ -24,52 +24,24 @@ collection: portfolio
             width: 50%;
             padding: 20px;
         }
+
+	video {
+            display: block; /* Ensures no extra space */
+            margin: auto; /* Centers horizontally */
+            width: 70%; /* Adjust as needed */
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+	/* Responsive Design */
+        @media (max-width: 500px) {
+            video {
+                width: 90%;
+            }
+        }
 	</style>
 
-	<style><!....... Style the code block ....>
-        /* Style for the code block container */
-        .code-container {
-            position: relative;
-            background-color: #282c34;
-            border-radius: 8px;
-            padding: 15px;
-            margin: 30px auto; /* Adds spacing before & after */
-            max-width: 60%; /* Responsive width */
-            max-height: 300px; /* Set height limit */
-            overflow: auto; /* Enables horizontal & vertical scrollbars */
-        }
-
-        /* Copy button */
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #61dafb;
-            color: black;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .copy-btn:hover {
-            background: #4fa3d1;
-        }
-
-        /* Code styling */
-        pre {
-            margin: 0;
-            padding: 15px;
-            white-space: pre; /* Prevents automatic wrapping */
-            overflow: auto; /* Enables scrolling */
-        }
-
-        code {
-            font-size: 8px;
-        }
-    </style>
+	
     <style> <! .... for the image containers ....>
 
 	/* Figure wrapper to center everything */
@@ -138,17 +110,41 @@ collection: portfolio
 
 
 <body>
+<p style="text-align:justify;">
+For soft, condensed matter physics, tracking particulate matter in flows are a cornerstone for understanding fluid behavior. Whether it understand fluid-solid interactions or whether it for understanding the fluid flow itself: -- where the particles in the fluid act as tracers. Thus, if we suspend tiny, lightweight particles in any fluid and track their motion, we can infer the flow behavior of the fluid itself, even if the fluid is transparent … sounds cool right!!
+</p>
+	
+<p style="text-align:justify;">
+If you have the liberty to dump larger concentration of particles into the fluid, then the fluid flow redistributes the particles in different regions of the fluid based on their velocity. Thus, by cross correlating the changes in positions of a bunch of these particles we can infer their speeds (for the curious ones.… this correlations process resembles convolution kernels a lot!!!.) This method is now popularly known as Particle Image Velocimetry (PIV).
+</p>
+
+<p style="text-align:justify;">
+PIV is extremely good for cases where the particles obediently follow the fluid flow without any active involvement. Thus, to measure the fluid flow, we can map the motion of an ensemble of these particles without the need for tracking individual particle.
+</p>
+
+<p style="text-align:justify;">
+Many a time, the particles are actively involved and modify the fluid dynamics through hydrodynamic perturbations. In such cases, measuring the motion of nearly every particle, becomes very important. To do so, we use another very interesting technique called as the Particle Tracking Velocimetry (PTV). <br>
+PTV is performed by taking multiple snapshots in quick succession of a moving particle and correlating their position across these multiple snapshots. So, how does this work?? 
+</p>	
+	
 <!........ Figure 1 .......>
 <figure class="image-wrapper three-columns">
     <div class="image-container">
         <img src="/images/KNN_/set_new.png" alt=" superposition.png">
         <img src="/images/KNN_/set_new_far_trace.png" alt="movement more.png">
-	<img src="KNN_/set_new_far_trace1.png" alt="added_between.png">
+	<img src="/images/KNN_/set_new_far_trace1.png" alt="added_between.png">
     </div>
     <figcaption class="image-caption"> Fig 1: a) Superimposed particle images from snapshots taken quickly, b) Superimposed particle images from snapshots taken with significant delay, c) Superimposed particle images from snapshots from (b) but with an intermdiate snap added between them</figcaption>
 </figure>
 
-
+<p style="text-align:justify;">
+To understand this let's look at fig 1 which shows the superposition of two consecutive images of the particle. One can notice three interesting things 
+</p>
+<ol>
+	<li> Between two successive snapshots, each particle has drifts by a distance which corresponds to its speed at that instant.If the snaps are taken in quick succession, you can identify the image pairs for each particle by eye between the snaps.(see fig 1(a))
+	<li> If the particle has travelled too far,(when there is siginifant time delay in taking a snapshot) the particles position in the previous frame becomes difficult to trace by eye.(see fig 1(b))
+	<li> However, if we add an intermediate snapshot, it become fairly easier to trace.(see fig 1(c)) 
+</ol>
 	
 <! ..... Figure 2 ........>
 <figure class="image-wrapper single-image">
@@ -188,81 +184,11 @@ collection: portfolio
 </figure>
 
 	
-		<!-------------------------- Python Code Block ----------------------->
-<script>
-        function copyCode(button) {
-            let codeBlock = button.nextElementSibling.innerText;
-            navigator.clipboard.writeText(codeBlock).then(() => {
-                button.innerText = "Copied!";
-                setTimeout(() => button.innerText = "Copy", 2000);
-            });
-        }
-</script>
-	<div class="code-container">
-        <button class="copy-btn" onclick="copyCode(this)">Copy</button>
-        <pre><code class="language-python">
-			# function to perform the Particle tracking via using KNN
-			def vel_spins(frame1, frame2):
-			'''
-			This function uses KNN to match the particles with their image in two consecutive frames
-			Params:
-				frame1: preceding snapshot
-				frame2: succeeding snapshot
-			'''
-			
-			# convert the positional data from the preceding snap into correct fromat of  [xi, yi] 
-			counter_frame1 = [];
-			for i in range(len(frame1.values)):
-				counter_frame1.append(frame1.values[i][1:])
-			frame1_train_data = np.array(counter_frame1) 
-			
-			# convert the positional data from the succeeding snap into correct fromat of  [xi, yi]
-			counter_frame2 =[];
-			for i in range(len(frame2.values)):
-				counter_frame2.append(frame2.values[i][1:])
-			frame2_train_data = np.array(counter_frame2)
-			
-			# ...... Implementation of the KNN to find the nearest neighbour
-			
-			# instatiate the KNN model setting K =1 and the algorithm of ball tree for more efficient search
-			train_data = nnbrs(n_neighbors=1, algorithm='ball_tree')
-			
-			# train the model using the data from the preceding SnapShot
-			train_data.fit(frame1_train_data)
-			
-			# Use this aforementioned trained model to predict the nearest neighbour of 
-			# particle position in the succeeeding frame 
-			# Here we implement the logic .... the nearest neighbour will be the image of itself!!!
-			
-			_,indices = train_data.kneighbors(frame2_train_data) 
-			# indices above provide the tags (refernce) to connect the images of the same particles between two frames 
-			
-			# Use the above tags to re-arrange the particle positions from the preceding frame 
-			add_X = []
-			add_Y = []
-			for x in indices:
-				add_X.append(frame1.iloc[x]['X'])
-				add_Y.append(frame1.iloc[x]['Y'])
-			
-			# attach the rearanged particle poisitons to the positions in the final frame 
-			# to create a single master coordinate table by adding to frame 2
-			frame2['XX'] = np.array(add_X)
-			frame2['YY'] = np.array(add_Y)  
-			
-			frame2['dX'] = frame2['XX'] - frame2['X']
-			frame2['dY'] = frame2['YY'] - frame2['Y']
-			
-			# compute  ''' Displacement''' for gnerating the velocity vectors
-			frame2['dR'] = np.sqrt(frame2['dX']**2 + frame2['dY']**2)
-			
-			# return the master table (udated frame 2) 
-			return frame2 
-        </code></pre>
-    </div>
+		
 	
-<! --------------------- Video code block --------------------------------->
-	
-    <video class="video-container" width = '400' height = '400' controls>
+<! --------------------- Video code block -------width = '500' height = '500'------------------>
+		
+    <video class="video-container"  controls>
         <source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
