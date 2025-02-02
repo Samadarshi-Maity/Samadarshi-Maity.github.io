@@ -16,7 +16,6 @@ collection: portfolio
             display: flex;
             flex-direction: column;
             align-items: center; /* Centers the figure */
-            justify-content: center;
             text-align: center; /* Ensures caption is centered */
             margin-bottom: 2px; /* Adds spacing between groups */
 	    vertical-align: middle; /* Adds spacing between groups */
@@ -34,7 +33,7 @@ collection: portfolio
             padding: 1px; /* Space inside the border */
             box-sizing: border-box; /* Ensures padding doesn’t increase size */
             margin: 1px auto; /* Centers the container */
-            gap: 5px; /* Adds spacing between images */
+            gap: 15px; /* Adds spacing between images */
         }
 		
         /* Single image layout */
@@ -59,8 +58,12 @@ collection: portfolio
         }
 
         /* Responsive: Stack images on smaller screens */
-        @media (max-width: 400px) {
-            .image-container img {
+        @media (max-width: 600px) {
+		.image-container{
+                flex-direction: column; /* Stack images on smaller screens */
+                width: 90%; /* Adjust for smaller screens */
+            }
+        	.image-container img {
                 width: 100%; /* Full width when stacked */
             }
         }
