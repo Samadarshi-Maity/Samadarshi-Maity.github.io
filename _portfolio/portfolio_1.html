@@ -37,7 +37,6 @@ collection: portfolio
             max-width: 60%; /* Responsive width */
             max-height: 300px; /* Set height limit */
             overflow: auto; /* Enables horizontal & vertical scrollbars */
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Copy button */
@@ -68,22 +67,126 @@ collection: portfolio
         }
 
         code {
-            font-size: 16px;
+            font-size: 8px;
         }
     </style>
+    <style> <! .... for the image containers ....>
+
+	/* Figure wrapper to center everything */
+        .image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the figure */
+            justify-content: center;
+            text-align: center; /* Ensures caption is centered */
+            margin-bottom: 10px; /* Adds spacing between groups */
+        }
+		
+        /* Container for images */
+        .image-container {
+            display: flex; /* Align images in a row */
+            justify-content: center; /* Center images */
+            align-items: center; /* Align images vertically */
+            flex-wrap: wrap;  Allows wrapping for responsiveness */
+            width: 100%; /* Adjusts width */
+            max-width: 900px; /* Prevents excessive stretching */
+            border: 1px solid black; /* Border around the images */
+            padding: 1px; /* Space inside the border */
+            box-sizing: border-box; /* Ensures padding doesn’t increase size */
+            margin: 1px auto; /* Centers the container */
+            gap: 5px; /* Adds spacing between images */
+        }
+		
+        /* Single image layout */
+        .single-image .image-container img {
+            width: 40%;
+			margin-bottom: -1px;
+			/* Full width for single image */
+        }
+        /* Styling for images */
+        .two-columns .image-container img {
+            width:49%; /* Two-column layout by default */
+            margin-bottom: -1px;
+        }
+
+        /* Three-column layout */
+        .three-columns .image-container img {
+            width: 32%; /* Three images per row */
+			margin-bottom: -1px;
+        }
+		/* Caption styling */
+        .image-caption {
+            font-style: italic;
+            color: black;
+            margin-top: 10px; /* Adds spacing above the caption */
+            font-size: 0.9em;
+        }
+
+        /* Responsive: Stack images on smaller screens */
+        @media (max-width: 600px) {
+			.image-container{
+                flex-direction: column; /* Stack images on smaller screens */
+                width:100%; /* Adjust for smaller screens */
+            }
+            .image-container img {
+                width: 100%; /* Full width when stacked */
+            }
+        }
+	</style>
+
 </head>
 
 
-
-
-
-
-
 <body>
+<!........ Figure 1 .......>
+<figure class="image-wrapper three-columns">
+    <div class="image-container">
+        <img src="/images/KNN_/set_new.png" alt=" superposition.png">
+        <img src="/images/KNN_/set_new_far_trace.png" alt="movement more.png">
+	<img src="KNN_/set_new_far_trace1.png" alt="added_between.png">
+    </div>
+    <figcaption class="image-caption"> Fig 1: a) Superimposed particle images from snapshots taken quickly, b) Superimposed particle images from snapshots taken with significant delay, c) Superimposed particle images from snapshots from (b) but with an intermdiate snap added between them</figcaption>
+</figure>
 
-```python
-print( 'blbla')
-```
+
+	
+<! ..... Figure 2 ........>
+<figure class="image-wrapper single-image">
+	<div class="image-container">
+		<img src ="/images/KNN_/set_new__arrow.png" class="center" >
+	</div>
+	<figcaption class="image-caption">Fig 2: Computing the distances of particle's image from preceding snap with all particle images from the succeeding snap (yellow arrows) the image of itself will be the shortest distance (blue arrow).</figcaption>
+</figure>
+	
+<! ........ Figure 3 ...... >
+<figure class="image-wrapper two-columns">
+	<div class="image-container">
+		<img src="/images/KNN_/Plain.png" alt="snap.png">
+		<img src="/images/KNN_/Identify.png" alt="snap_indentification.png">
+	</div>
+	<figcaption class="image-caption"> Fig 3: a) Snapshot of a binary population of colloids. Those appearing white are the fluorescent particles which are 10 microns in size while the darker ones are non-fluorescent and are 7 microns in size, b) Using ImageJ we can identify the two populations quite accurately. The Fluorescent and the Non-fluorescent population are marked as <span style='color: #0000FF'>Blue</span> and <span style = 'color:#FF0000'>Red</span> points respectively in the overlay.</figcaption>
+</figure>
+
+
+<!......... Figure 4 ...... >
+<figure class="image-wrapper two-columns">
+	<div class="image-container">
+		<img src="/images/KNN_/Shift.png" alt="superimposed_succesive_snaps.png">
+		<img src="/images/KNN_/Shift_appriciate.png" alt="Zoomed_superimposition.png">
+	</div>
+	<figcaption class="image-caption"> Fig 4: a) The superimposed coordinated of the binary population from two successive snapshot. The snapshots have been taken very rapidly so the images of a single particle are almost overlapping. Just for perspective, The particle are travelling at c.a. 1 mm/s and the frames rate for imaging is 500 frames/sec b) The zoomed image of the lower left quadrant of the plot on the left. One can figure out the image pairs of most particles by eye.</figcaption>
+</figure> 
+<p style="text-align:justify;">
+
+
+<! ........ Figure 5 ...... >
+<figure class="image-wrapper single-image">
+	<div class="image-container">
+		<img src ="/images/KNN_/PTV_final.png" class="center" >
+	</div>
+	<figcaption class="image-caption">Fig 5: Using KNN (K=1) approach, image pairs of every particle is matched. The displacement between two successive snapshots of each particle between frames can now be measured now(indicated by the arrows) which also denote their respective velocity vectors </figcaption>
+</figure>
+
 	
 		<!-------------------------- Python Code Block ----------------------->
 <script>
