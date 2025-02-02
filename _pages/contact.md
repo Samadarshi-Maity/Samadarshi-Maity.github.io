@@ -8,4 +8,5 @@ classes: wide
 
 You can directly reach me at: 
 \\
-samadarshi.maity@gmail.com 
+Personal   : samadarshi.maity@gmail.com <br>
+University : maity@physics.leidenuniv.nl
