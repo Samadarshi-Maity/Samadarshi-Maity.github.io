@@ -7,9 +7,8 @@ redirect_from:
   - /resume
 ---
 
-A P.D.F. version of my CV is available <a href = 'https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/blob/main/_publications/CV_.pdf'> <- here -></a>
+PDF version of my CV is available <a href = 'https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/blob/main/_publications/CV_.pdf'> <- here -></a>
 
-............................. # Full Version Below .................................................
 ## Education
 
 * Ph.D   : Leiden University, Non-Equilibrium Statistical Physics,  (2021 -Present)
