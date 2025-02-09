@@ -7,14 +7,9 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+A P.D.F. version of my CV is available <a href = 'https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/blob/main/_publications/CV_.pdf'> <- here -></a>
 
-<br>
-<br>
-
-
-
-
+............................. # Full Version Below .................................................
 ## Education
 
 * Ph.D   : Leiden University, Non-Equilibrium Statistical Physics,  (2021 -Present)
@@ -40,7 +35,7 @@ redirect_from:
   * Collaborated with a team of five students to develop a Monte Carlo-based framework for precise computation of the carbon footprint of food products.
   * Developed a Python-driven model to estimate product-specific carbon footprints based on ingredient composition specified on the food label.
   * Presented our findings to the global sustainability team at Deloitte. 
-  * Supervisor: Marion Robin (Deloitte) , Garde 9/10.
+  * Supervisor: Marion Robin (Deloitte), Grade 9/10.
   
 ## Skills
 
@@ -57,17 +52,6 @@ redirect_from:
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-## Talks
-
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-## Teaching
-
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
   
 ## Service and leadership
 
