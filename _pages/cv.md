@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 PDF version of my CV is available 
-<a href = '_publications/CV_.pdff' download>here</a>
+<a href = '_publications/CV_.pdf' download>here</a>
 
 ## Education
 
