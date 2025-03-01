@@ -1,0 +1,220 @@
+---
+title: "Particle Tracking Velocimetry (PTV) using K-Nearest Neighbors (KNN)"
+excerpt: "A gentle, informal implementation of PTV using KNN technique using negligible mathematical equations and a pinch of Python (code)<br>
+<br>
+<img src='/images/KNN_/teaser.jpg'>"
+collection: portfolio
+---
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Code Block with Auto Syntax Highlighting</title>
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+	
+	<style> <! .... Style video container ....>
+	        /* Centering the video */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            padding: 20px;
+        }
+
+	video {
+            display: block; /* Ensures no extra space */
+            margin: auto; /* Centers horizontally */
+            width: 70%; /* Adjust as needed */
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+	/* Responsive Design */
+        @media (max-width: 500px) {
+            video {
+                width: 90%;
+            }
+        }
+	</style>
+
+	
+    <style> <! .... for the image containers ....>
+
+	/* Figure wrapper to center everything */
+        .image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the figure */
+            justify-content: center;
+            text-align: center; /* Ensures caption is centered */
+            margin-bottom: 10px; /* Adds spacing between groups */
+        }
+		
+        /* Container for images */
+        .image-container {
+            display: flex; /* Align images in a row */
+            justify-content: center; /* Center images */
+            align-items: center; /* Align images vertically */
+            flex-wrap: wrap;  Allows wrapping for responsiveness */
+            width: 100%; /* Adjusts width */
+            max-width: 900px; /* Prevents excessive stretching */
+            border: 1px solid black; /* Border around the images */
+            padding: 1px; /* Space inside the border */
+            box-sizing: border-box; /* Ensures padding doesn’t increase size */
+            margin: 1px auto; /* Centers the container */
+            gap: 5px; /* Adds spacing between images */
+        }
+		
+        /* Single image layout */
+        .single-image .image-container img {
+            width: 40%;
+			margin-bottom: -1px;
+			/* Full width for single image */
+        }
+        /* Styling for images */
+        .two-columns .image-container img {
+            width:49%; /* Two-column layout by default */
+            margin-bottom: -1px;
+        }
+
+        /* Three-column layout */
+        .three-columns .image-container img {
+            width: 32%; /* Three images per row */
+			margin-bottom: -1px;
+        }
+		/* Caption styling */
+        .image-caption {
+            font-style: italic;
+            color: black;
+            margin-top: 10px; /* Adds spacing above the caption */
+            font-size: 0.9em;
+        }
+
+        /* Responsive: Stack images on smaller screens */
+        @media (max-width: 600px) {
+			.image-container{
+                flex-direction: column; /* Stack images on smaller screens */
+                width:100%; /* Adjust for smaller screens */
+            }
+            .image-container img {
+                width: 100%; /* Full width when stacked */
+            }
+        }
+	</style>
+
+</head>
+
+
+<body>
+<p style="text-align:justify;">
+For soft, condensed matter physics, tracking particulate matter flows is a cornerstone for understanding fluid behavior. Whether it understands fluid-solid interactions or whether it is for understanding the fluid flow itself: -- where the particles in the fluid act as tracers. Thus, if we suspend tiny, lightweight particles in any fluid and track their motion, we can infer the flow behavior of the fluid itself, even if the fluid is transparent … sounds cool right!!
+</p>
+	
+<p style="text-align:justify;">
+If one has the liberty to dump a larger concentration of particles into the fluid, then the fluid flow redistributes the particles in different regions of the fluid based on their velocity. Thus, by cross-correlating the changes in positions of a bunch of these particles we can infer their speeds (for the curious ones.… this correlation process resembles convolution kernels a lot!!!.) This method is now popularly known as Particle Image Velocimetry (PIV).
+</p>
+
+<p style="text-align:justify;">
+PIV is extremely good for cases where the particles obediently follow the fluid flow without any active involvement. Thus, to measure the fluid flow, we can map the motion of an ensemble of these particles without the need for tracking individual particles.
+</p>
+
+<p style="text-align:justify;">
+Many a time, the particles are actively involved and modify the fluid dynamics through hydrodynamic perturbations. In such cases, measuring the motion of nearly every particle becomes very important. To do so, we use another very interesting technique called <b>Particle Tracking Velocimetry (PTV)</b>. PTV is performed by taking multiple snapshots in quick succession of a moving particle and correlating their position across these multiple snapshots. So, how does this work??
+</p>	
+	
+<!........ Figure 1 .......>
+<figure class="image-wrapper three-columns">
+    <div class="image-container">
+        <img src="/images/KNN_/set_new.png" alt=" superposition.png">
+        <img src="/images/KNN_/set_new_far_trace.png" alt="movement more.png">
+	<img src="/images/KNN_/set_new_far_trace1.png" alt="added_between.png">
+    </div>
+    <figcaption class="image-caption"> Fig 1: a) Superimposed particle images from snapshots taken quickly, b) Superimposed particle images from snapshots taken with significant delay, c) Superimposed particle images from snapshots from (b) but with an intermediate snap added between them.</figcaption>
+</figure>
+
+<p style="text-align:justify;">
+To understand this let's look at fig 1 which shows the superposition of two consecutive images of the particle. One can notice three interesting things 
+</p>
+<ol>
+	<li> Between two successive snapshots, each particle drifts by a distance that corresponds to its speed at that instant. If the snaps are taken in quick succession, you can identify the image pairs for each particle by eye between the snaps.(see fig 1(a))
+	<li> If the particle has traveled too far,(when there is a significant time delay in taking a snapshot) the position of the particle in the previous frame becomes difficult to trace by eye.(see fig 1(b))
+	<li> However, if we add an intermediate snapshot, it becomes fairly easy to trace.(see fig 1(c)) 
+</ol>
+
+<p style="text-align:justify;">
+	This is because our brain which is a beautiful neural network, searches for patterns to establish a single identity of a particle across several snapshots. This pattern is: finding the closest particle images between successive snapshots.<br>
+	To do this, it estimates the distances of a particle’s image in a preceding snap to all particle images in the successive snap. Thus, ideally speaking, the nearest particle image in the successive snap will most likely be the image of itself!! (see fig 2). If the delay between two snaps is long, then the particles might have traveled far from their position in the preceding snapshot, enough to confuse our brains regarding the previous position of the particle. Hence we find it difficult to trace the original positions as in fig 1(b).
+</p>
+<! ..... Figure 2 ........>
+<figure class="image-wrapper single-image">
+	<div class="image-container">
+		<img src ="/images/KNN_/set_new__arrow.png" class="center" >
+	</div>
+	<figcaption class="image-caption">Fig 2: Computing the distances of the particle's image from the preceding snap with all particle images from the succeeding snap (yellow arrows) the image of itself will be the shortest distance (blue arrow).</figcaption>
+</figure>
+<p style="text-align:justify;">
+Most statisticians/data gurus/analysts/science nerds might have figured out by now how this trick can be mathematically implemented. Yes …… the answer is: using K Nearest Neighbors (KNN). Because the nearest neighbor (K=1) of any particle, is its OWN IMAGE from the consecutive snapshot. So, what is KNN?
+</p>
+<p style="text-align:justify;">
+KNN is a technique by which we can search for the 'K' number of nearest neighbors of any entity. A simple example can be a classroom full of children where each child can use a measurement tape and measure out the nearest 3 classmates that are sitting around them. For this, it stands as K=3. KNN is one of the most versatile methods in statistics because balances perfectly between performance and simplicity. Also, it is flexible enough to be used for classification as well as regression problems.
+</p>
+<! ........ Figure 3 ...... >
+<figure class="image-wrapper two-columns">
+	<div class="image-container">
+		<img src="/images/KNN_/Plain.png" alt="snap.png">
+		<img src="/images/KNN_/Identify.png" alt="snap_indentification.png">
+	</div>
+	<figcaption class="image-caption"> Fig 3: a) Snapshot of a binary population of colloids. Those appearing white are the fluorescent particles which are 10 microns in size while the darker ones are non-fluorescent and are 7 microns in size, b) Using ImageJ we can identify the two populations quite accurately. The Fluorescent and the Non-fluorescent population are marked as <span style='color: #0000FF'>Blue</span> and <span style = 'color:#FF0000'>Red</span> points respectively in the overlay.</figcaption>
+</figure>
+
+<p style="text-align:justify;">
+At this stage, I can demonstrate the power of KNN that drives PTV using a simple example from my PhD experiments. fig.3(a) shows a snapshot of two populations of particles moving inside a vortex. Using a computer vision software called ImageJ, I can Identify each population pretty accurately and I indicate them with red and blue colors as shown in fig 3(b). Now, I perform the same operation on the successive snapshot as well and overlay the coordinates on the previous snapshot as shown in fig. 4(a). You can appreciate how rapidly the subsequent snapshot was taken as the particles have moved very little and this is visible more clearly in fig 4(b) where I zoom into the bottom left quadrant of the vortex. You can almost tell the image pairs for each particle just by looking at this figure!!
+</p>
+
+<!......... Figure 4 ...... >
+<figure class="image-wrapper two-columns">
+	<div class="image-container">
+		<img src="/images/KNN_/Shift.png" alt="superimposed_succesive_snaps.png">
+		<img src="/images/KNN_/Shift_appriciate.png" alt="Zoomed_superimposition.png">
+	</div>
+	<figcaption class="image-caption"> Fig 4: a) The superimposed coordination of the binary population from two successive snapshots. The snapshots have been taken very rapidly so the images of a single particle almost overlap. For perspective, The particles are traveling at c.a. 1 mm/s and the frame rate for imaging is 500 frames/sec b) The zoomed image of the lower left quadrant of the plot on the left. One can figure out the image pairs of most particles by eye.</figcaption>
+</figure> 
+<p style="text-align:justify;">
+Now, to implement KNN mathematically, I define a function to search for the nearest neighbor (Visit my Github Repository to check out my <a href='https://github.com/Samadarshi-Maity/Particle_tracking_using_KNN/blob/main/KNN%20Implementation.ipynb'><b>Jupyter Notebook</b></b></a> containing the code implementation. The simplest searching strategy is the ‘brute force’ method that first computes the distances between all possible image pairs. An image pair is created by picking 1 image from each frame. Then it chooses the ‘shortest’ distance. However, this is computationally very expensive (scales with a square of the number of particles) and there are better algorithms like ‘KD tree’ and ‘ball tree’ that use binary search to optimize the searching process(this scales linearly). I will discuss these algorithms in detail in some other post. 
+</p>
+
+<p style="text-align:justify;">
+	So, once the algorithm finds the image pair of each particle between the successive frames, it generates ‘indices’ as ‘tags’ which I then use to connect the correct image pair. Then I generate a ‘displacement’ vector, using the coordinates of the image pair. Unrealistic displacement vectors help me remove some wrongly connected image pairs (of course) that I ignore due to their statistical irrelevance. Fig 5 shows the final velocity vector computed from the displacement vectors simply by dividing it by the time lag between the two successive snapshots completing the PTV process between two snaps. Now, doing this between all snapshots of the experiment, I can trace the motion of nearly all particles throughout my entire experiment.
+</p>
+
+
+<! ........ Figure 5 ...... >
+<figure class="image-wrapper single-image">
+	<div class="image-container">
+		<img src ="/images/KNN_/PTV_final.png" class="center" >
+	</div>
+	<figcaption class="image-caption">Fig 5: Using the KNN (K=1) approach, image pairs of every particle are matched. The displacement between two successive snapshots of each particle between frames can now be measured (indicated by the arrows) which also denote their respective velocity vectors. </figcaption>
+</figure>
+
+<p style="text-align:justify;">
+	A definite question that comes to your mind by now: What snapshot rate is quick enough for successful and efficient particle tracking? Well, for real experiments, particles are finite-sized and occupy space, hence do not overlap. We exploit this to say that the  imaging rate should be greater than D/V where D is the diameter of the particle and V is the speed of the fastest particle. Also, it should not be too quick: it should be slow enough for particle detection software (like imageJ) to detect a change in the particle position based on the camera’s image resolution. 
+</p>	
+<p style="text-align:justify;">
+	Finally, I am sure you might now be curious to know about my experimental image and how the two populations of particles are beautifully segregated inside the ‘circular vortex’ ??? what is this vortex by the way??? and how are they even moving ???. All these answers are presented in my <a href = 'https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.178304'> <b>article</b></a> published in the <b>Physical Review Letters</b>. You can watch the video (see below) of the particles forming the vortex and segregating spontaneously.  
+</p>		
+	
+<! --------------------- Video code block -------width = '500' height = '500'------------------>
+		
+    <video class="video-container"  controls>
+        <source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+
+
+</body>
