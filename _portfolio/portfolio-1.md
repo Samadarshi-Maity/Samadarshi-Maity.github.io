@@ -1,8 +1,7 @@
 
 
-<! ....... ---
- title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Beginner's Guide to Markov Chain Monte Carlo"
+excerpt: " An easy implementation of Markovian Monte Carlo to compute Thermodyanamic properties of Simple gases <br/><img src='/images/500x300.png'>"
 collection: portfolio
 ---
 
