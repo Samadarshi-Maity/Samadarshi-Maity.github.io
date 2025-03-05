@@ -28,6 +28,9 @@ If we confine the rollers in a circular well, we observe that a mixture of activ
 
 # Tech stack that I use for my Ph.D.
 
+## Schematic of my data workflow
+<img src="/images/Research/PhD data flow.svg" alt="Price_m2_vs_year.png" >
+
 ## Data Collection
 As mentioned before, I observed millions of colloidal particles, and these particles move very fast given their size of a few microns ... almost in the order of 1mm/s. Thus, high-speed imaging is necessary to study them (up to 1k frames per sec). I use <a href = 'https://www.ximea.com/'> XIMEA</a> CMOS cameras coupled to a PCIe reader for transferring images to a computer memory.  
 
