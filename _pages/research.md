@@ -1,13 +1,10 @@
 ---
 layout: archive
-title: "Research"
+title: "My Doctoral Research"
 permalink: /research/
 author_profile: true
 
 ---
-
-
-# My Doctoral Research
 
 My research work primarily focuses on the experimental investigation of active polar fluids that are driven out of equilibrium through an 'active' drive. I build these so-called 'fluids' using micron-sized spherical particles suspended in oil that 'flow' together, hence termed 'active fluid'. 
 <br>
