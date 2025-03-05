@@ -6,9 +6,6 @@ author_profile: true
 
 ---
 
-{% include base_path %}
-
-This page includes details about my academic profile.  
 
 # My Doctoral Research
 
