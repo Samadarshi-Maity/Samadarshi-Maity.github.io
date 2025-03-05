@@ -6,8 +6,10 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello!! Thank you for stopping by. I am Samadarshi ( pronounced as some-other-she…), a  doctoral researcher at the University of Leiden in the Netherlands. I specialize in experimental and theoretical non-equilibrium Statistical Physics. You can check out the details about my research in the research section. 
+Hello!! Thank you for stopping by. I am Samadarshi (pronounced as some-other-sh), a  doctoral researcher at the Universitiet Leiden in the Netherlands. I specialize in experimental and theoretical non-equilibrium Statistical Physics. Please check out the details about my research (and also how I manage/process ~50+ TB of my research data) in the research section. 
 
-Outside work, you can find me reading a book in a quiet corner, or playing my classical guitar. I have a deep interest in understanding the truth behind how the world operates beyond the naive eyes, and that includes searching for information for (example climate data on which regulations are framed, geopolitical statistics, and  more recently… agricultural data on how the Netherlands managed to become the 2nd food exporter in the world). I am also keenly interested in understanding finance and how its circulation rotates the world.
+Outside work, you can find me reading a book in a quiet corner or playing my classical guitar. I also love to explain complex concepts at a layman level, i.e., using a methodology that needs minimum prerequisites. Check out the portfolio section, where I attempt to explain common statistical inferencing, computational and general mathematical models/problems using simple examples and tools.  
 
-Please feel free to connect with me if you have any questions or if you have anything of mutual interest. 
+I have a deep interest in understanding the unbiased truth behind how the world operates beyond naive eyes, and that includes searching for information (for example, climate data on which regulations are framed and geopolitical statistics). I am also keenly interested in understanding finance and how its circulation rotates the world.
+
+Please feel free to connect with me if you have any questions or if you want to discuss anything of mutual interest. 
