@@ -24,22 +24,21 @@ A downloadable PDF version of my CV is available
 
 ## Internship and Work Projects 
 
-* COSMO FILMS Ltd.
-  * Developed fully automated calibration software for a constant-volume calorimeter to compute the combustion quality of furnace oil used to heat thermic fluid, adhering to ISO standards.
-  * This enabled the judicious selection of vendors to purchase high-quality furnace oil.
-  * Supervisor: 
-
-* ZEF B.V.
-
-  * Developed an algorithm to estimate the CO2 absorption potential of different amines based on their chemical structure.
-  * Utilized the technique to rapidly screen and identify the most promising organic amines for developing an efficient carbon capture technology.
-  * Supervisor: Mrigank Sinha, Grade 9/10
-
 * Deloitte 
   * Collaborated with a team of five students to develop a Monte Carlo-based framework for precise computation of the carbon footprint of food products.
   * Developed a Python-driven model to estimate product-specific carbon footprints based on ingredient composition specified on the food label.
   * Presented our findings to the global sustainability team at Deloitte. 
   * Supervisor: Marion Robin (Deloitte), Grade 9/10.
+
+* ZEF B.V.
+  * Developed an algorithm to estimate the CO2 absorption potential of different amines based on their chemical structure.
+  * Utilized the technique to rapidly screen and identify the most promising organic amines for developing an efficient carbon capture technology.
+  * Supervisor: Mrigank Sinha, Grade 9/10
+ 
+* COSMO FILMS Ltd.
+  * Developed fully automated calibration software for a constant-volume calorimeter to compute the combustion quality of furnace oil used to heat thermic fluid, adhering to ISO standards.
+  * This enabled the judicious selection of vendors to purchase high-quality furnace oil.
+  * Supervisor: Anil Gaikwad, Grade 9/10
 
 ## Experimental expertise: 
  
@@ -53,6 +52,3 @@ A downloadable PDF version of my CV is available
 * Bengali - Native
 * Marathi - Native
   
-## Service and leadership
-
-* Currently signed in to 43 different slack teams
