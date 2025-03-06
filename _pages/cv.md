@@ -7,8 +7,8 @@ redirect_from:
   - /resume
 ---
 
-A PDF version of my CV is available 
-<a href = 'https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/blob/main/_publications/CV_.pdf' download>here</a>
+A downloadable PDF version of my CV is available 
+<a href="https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/raw/main/_publications/CV_.pdf" download="CV_Samadarshi_Maity.pdf">here</a>
 
 ## Education
 
