@@ -6,7 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hello!! Thank you for stopping by. I am Samadarshi (pronounced as some-other-sh), a  doctoral researcher at the Universitiet Leiden in the Netherlands. I am work in the group of <a href = 'https://morinlab.com/'>Dr. Alexandre Morin</a> as a part of the <a href = 'https://slam-leiden.nl/Slam/Main/'>Soft, Living & Active Matter</a> cluster at LION (Leiden Institute of Physics). I specialize in experimental and theoretical non-equilibrium Statistical Physics. The details about my research (and also how I manage/process ~50+ TB of my research data) in the research section of this website. 
+<div style="text-align: justify"> 
+Hello!! Thank you for stopping by. I am Samadarshi (pronounced as some-other-she), a  doctoral researcher at the Universitiet Leiden in the Netherlands. I am supervised by <a href = 'https://morinlab.com/'>Dr. Alexandre Morin</a> whose group is a part of the <a href = 'https://slam-leiden.nl/Slam/Main/'>Soft, Living & Active Matter</a> research cluster at LION (Leiden Institute of Physics). I specialize in experimental and theoretical non-equilibrium Statistical Physics. The details about my research (and also how I manage/process ~50+ TB of my research data) in the research section of this website. 
+</div>
 
 Outside work, you can find me reading a book in a quiet corner or playing my classical guitar. I also love to explain complex concepts at a layman level, i.e., using a methodology that needs minimum prerequisites. Check out the portfolio section, where I attempt to explain common statistical inferencing, computational and general mathematical models/problems using simple examples and tools.  
 
