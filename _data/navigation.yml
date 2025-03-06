@@ -14,7 +14,10 @@ main:
 
   - title: "Research"
     url: /research/
-
+    
+  - title: Data Stack
+    url: /Stack/
+    
   - title: "Contact"
     url: /contact/     
         
