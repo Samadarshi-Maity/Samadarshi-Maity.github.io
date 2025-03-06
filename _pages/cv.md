@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 A downloadable PDF version of my CV is available 
-<a href="https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/raw/main/_publications/CV_.pdf" download="CV_Samadarshi_Maity">here</a>
+<a href="https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/raw/main/_publications/CV_Samadarshi_Maity.pdf" download="CV_Samadarshi_Maity">here</a>
 
 ## Education
 
