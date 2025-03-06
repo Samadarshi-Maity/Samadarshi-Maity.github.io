@@ -6,7 +6,7 @@ author_profile: true
 
 ---
 <p align="justify">
-The following sketch shows my data processing workflow (data pipeline). The 3D boxes are hardware involved and the green boxes are the state in which the data exists at that point in the pipeline. the red arrows indicate the flow of data in the pipeline.
+The following sketch shows my data processing workflow (data pipeline). The 3D boxes are hardware involved and the green boxes are the state in which the data exists at that point in the pipeline. The red arrows indicate the flow of data in the pipeline. The data at each stage is stored in the repective succeeding hardware.
 </p> 
 
 ## Schematic of my data workflow
@@ -30,6 +30,6 @@ I use state-of-the-art statistical methods and advanced computational workflows 
 
 ## Debugging and error handling
 <p align="justify">
-This is very important aspect. I use simple Python classes and associated methods to break down repeating processing steps. The above data workflow was build particlularly to handle unexpected crashes with enough room for backup as well as systematically searching for errors in the data pipeline. I developed simple unit tests for computations that I need to benchmark before I build upon them. For example, checking if the geometrical transformations from cartesian to polar coordinates are correctly computed for each data set before I start peforming correlation analyses. 
+This is very important aspect. I use simple Python classes and associated methods to break down repeating processing steps. The above data workflow was build particlularly to handle unexpected crashes with enough room for backup as well as systematically searching for errors in the data pipeline. I developed simple unit tests for computations that I need to benchmark before I build upon them. For example, checking if the geometrical transformations from cartesian to polar coordinates are correctly computed for each data set before I start performing correlation analyses. 
 </p>
 
