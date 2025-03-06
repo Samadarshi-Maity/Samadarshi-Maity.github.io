@@ -6,7 +6,7 @@ author_profile: true
 
 ---
 <p align="justify">
-The following sketch shows my data processing workflow (data pipeline). The 3D boxes are hardware involved and the green boxes are the state in which the data exists at that point in the pipeline. The red arrows indicate the flow of data in the pipeline. The data at each stage is stored in the repective succeeding hardware.
+The following sketch shows my data processing workflow (data pipeline). The 3D boxes are hardware involved and the green boxes are the state in which the data exists at that point in the pipeline. The red arrows indicate the flow of data in the pipeline. The data at each stage is stored in the succeeding hardware within the pipeline.
 </p> 
 
 ## Schematic of my data workflow
