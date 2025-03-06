@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Technology Stack and Data Pipeline of my PhD"
-permalink: /Data Stack/
+permalink: /Stack/
 author_profile: true
 
 ---
