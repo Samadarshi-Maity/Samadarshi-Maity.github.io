@@ -10,7 +10,7 @@ The following sketch shows my data processing workflow (data pipeline). The 3D b
 </p> 
 
 ## Schematic of my data workflow
-<img src="/images/Research/PhD data flow.svg" alt="PhD data flow" >
+
 
 ## Data Collection
 <p align="justify">
