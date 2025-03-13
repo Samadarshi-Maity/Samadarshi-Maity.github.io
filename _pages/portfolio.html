@@ -9,8 +9,9 @@ entries_layout: grid
 
 {% include base_path %}
 
-
-{% for post in site.portfolio %}
+ <div class="grid__wrapper">
+{% for post in site.portfolio limit:4 %}
   {% include archive-single.html type="grid" %}
 {% endfor %}
-
+</div>
+      
