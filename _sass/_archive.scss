@@ -129,7 +129,7 @@
 
   .archive__item-excerpt {
     display: none;
-    text-align: center;
+    text-align: justify;
   }
 
   @include breakpoint($small) {
