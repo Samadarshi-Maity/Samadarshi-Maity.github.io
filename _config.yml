@@ -269,7 +269,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: grid
+      layout: single
       author_profile: true
       share: true
       comment: true
