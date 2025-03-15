@@ -118,7 +118,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Align items to center */
-  margin-bottom: -0.5em
+  margin-bottom: -2em
 }
 .grid__item {
   display: flex;
@@ -131,7 +131,7 @@
   border: 2px solid #ccc; /* Adjust border thickness and color */
   border-radius: 40px; /* Adjust the roundness of the corners */
   padding: 1em; /* Add some padding inside the border */  
-  height: 300px; /* Fixed height */
+  height: 450px; /* Fixed height */
   position: relative; /* Needed for transition */
   overflow: hidden; /* Prevent content from overflowing */
 
