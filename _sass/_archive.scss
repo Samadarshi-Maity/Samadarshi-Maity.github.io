@@ -113,13 +113,6 @@
    Grid view
    ========================================================================== */
 
-
-.grid__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Align items to center */
-  margin-bottom: 1em
-}
 .grid__item {
   display: flex;
   flex-direction: column;   
