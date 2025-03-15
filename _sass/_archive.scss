@@ -4,7 +4,6 @@
 
 .archive {
   margin-bottom: 2em;
-  z-index:1;
   @include breakpoint($medium) {
     @include span(12 of 12);
   }
@@ -52,7 +51,6 @@
 .page__content {
 
   .archive__item-title {
-    z-index: 2; 
     margin-top: 1em;
     border-bottom: none;
     text-align: center; 
@@ -116,7 +114,6 @@
 
 .grid__item {
   display: flex;
-  z-index: 2; 
   flex-direction: column;   
   align-items: center; /* Center elements inside each grid item */
   text-align: justify;
@@ -132,7 +129,6 @@
 
   /* Fading effect using pseudo-element */
   &::after {
-    z-index: 3; 
     position: absolute;
     bottom: 0;
     left: 0;
@@ -151,17 +147,14 @@
   .archive__item-title {
     margin-top: 0.5em;
     font-size: $type-size-5;
-    z-index: 2;
   }
 
   .archive__item-excerpt {
     text-align: center;
-    z-index: 2; 
   }
 
    /* Expand on hover to show full content */
   &:hover {
-    z-index: 2; 
     height: auto;
     max-height: fit-content;
     mask-image: none;
