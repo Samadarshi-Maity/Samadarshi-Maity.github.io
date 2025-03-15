@@ -109,13 +109,14 @@
   }
 }
 
-
-/* Grid view */
+/*
+   Grid view
+   ========================================================================== */
 .grid__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
-  grid-gap: 1em; /* Space between grid items */
-  justify-items: center; /* Center grid items */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Align items to center */
+  gap: 1em; /* Space between grid items */
 }
 
 .grid__item {
@@ -124,33 +125,42 @@
   align-items: center; /* Center elements inside each grid item */
   text-align: justify;
   margin-bottom: 2em;
-}
+  flex: 1 1 calc(33.33% - 1em); /* Force 3 items per row */
+  max-width: calc(33.33% - 1em);
 
-.grid__item .page__meta {
-  margin: 0 0 4px;
-}
-
-.grid__item .archive__item-title {
-  margin-top: 0.5em;
-  font-size: $type-size-5;
-}
-
-.grid__item .archive__item-excerpt {
-  text-align: center;
-}
-
-@media (max-width: 1023px) {
-  .grid__container {
-    grid-template-columns: repeat(2, 1fr); /* Two items per row on medium screens */
+  .page__meta {
+    margin: 0 0 4px;
   }
 
-  .grid__item {
-    flex: 1 1 100%;
+  .archive__item-title {
+    margin-top: 0.5em;
+    font-size: $type-size-5;
   }
 
-  @media (max-width: 600px) {
-    .grid__container {
-      grid-template-columns: 1fr; /* One item per row on small screens */
+  .archive__item-excerpt {
+    text-align: center;
+  }
+
+  @include breakpoint($small) {
+    @include gallery(5 of 10);
+    .archive__item-teaser {
+      max-height: 200px;
+    }
+  }
+
+  @include breakpoint($medium) {
+    margin-left: 0; /* reset before mixin does its thing */
+    margin-right: 0; /* reset before mixin does its thing */
+    @include gallery(2.5 of 10);
+
+    .archive__item-teaser {
+      max-height: 120px;
+    }
+
+    .archive__item-excerpt {
+      display: block;
+      font-size: $type-size-6;
+      text-align: right;
     }
   }
 }
@@ -163,6 +173,28 @@
 
   .grid__item:nth-child(3n + 1) {
     clear: both; /* Forces new row every 3 items */
+  }
+}
+
+/* Small screens (default flexible layout) */
+@media (max-width: 1023px) {
+  .grid__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center; /* Center items for flexibility */
+  }
+
+  .grid__item {
+    flex: 1 1 calc(50% - 1em); /* Two items per row on medium screens */
+    max-width: calc(50% - 1em);
+  }
+
+  @media (max-width: 600px) {
+    .grid__item {
+      flex: 1 1 100%; /* Full width for mobile */
+      max-width: 100%;
+    }
   }
 }
 
