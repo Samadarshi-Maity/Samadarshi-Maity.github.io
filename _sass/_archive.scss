@@ -52,6 +52,7 @@
 .page__content {
 
   .archive__item-title {
+    z-index: 2; 
     margin-top: 1em;
     border-bottom: none;
     text-align: center; 
@@ -131,7 +132,7 @@
 
   /* Fading effect using pseudo-element */
   &::after {
-    content: "";
+    z-index: 3; 
     position: absolute;
     bottom: 0;
     left: 0;
@@ -150,16 +151,17 @@
   .archive__item-title {
     margin-top: 0.5em;
     font-size: $type-size-5;
-    z-index: 3;
+    z-index: 2;
   }
 
   .archive__item-excerpt {
     text-align: center;
-    z-index: 3; 
+    z-index: 2; 
   }
 
    /* Expand on hover to show full content */
   &:hover {
+    z-index: 2; 
     height: auto;
     max-height: fit-content;
     mask-image: none;
