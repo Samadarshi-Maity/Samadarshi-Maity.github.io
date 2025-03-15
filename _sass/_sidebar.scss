@@ -191,7 +191,7 @@
   border: 1px solid $border-color;
   border-radius: $border-radius;
   background: #fff;
-  z-index: 6;
+  z-index: 9;
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
 
@@ -215,7 +215,7 @@
     border-style: solid;
     border-width: 0 10px 10px;
     border-color: $border-color transparent;
-    z-index: 6;
+    z-index: 9;
 
     @include breakpoint($large) {
       display: none;
@@ -232,7 +232,7 @@
     border-style: solid;
     border-width: 0 10px 10px;
     border-color: #fff transparent;
-    z-index: 6;
+    z-index: 9;
 
     @include breakpoint($large) {
       display: none;
