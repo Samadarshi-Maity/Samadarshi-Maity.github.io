@@ -9,7 +9,7 @@
 .sidebar {
   -webkit-transform: translate3d(0, 0 , 0);
           transform: translate3d(0, 0 , 0);
- z-index: 5;
+ z-index: 9;
   @include clearfix();
   margin-bottom: 1em;
 
@@ -64,7 +64,7 @@
     float: right;
     width: $right-sidebar-width-narrow;
     margin-left: span(0.5 of 12);
-    z-index: 10;
+    z-index: 9;
   }
 
   @include breakpoint($x-large) {
@@ -191,7 +191,7 @@
   border: 1px solid $border-color;
   border-radius: $border-radius;
   background: #fff;
-  z-index: -1;
+  z-index: 6;
   box-shadow: 0 0 10px rgba(#000, 0.25);
   cursor: default;
 
@@ -215,7 +215,7 @@
     border-style: solid;
     border-width: 0 10px 10px;
     border-color: $border-color transparent;
-    z-index: 0;
+    z-index: 6;
 
     @include breakpoint($large) {
       display: none;
@@ -232,7 +232,7 @@
     border-style: solid;
     border-width: 0 10px 10px;
     border-color: #fff transparent;
-    z-index: 1;
+    z-index: 6;
 
     @include breakpoint($large) {
       display: none;
