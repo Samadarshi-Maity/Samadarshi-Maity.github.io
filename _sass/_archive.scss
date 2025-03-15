@@ -131,15 +131,20 @@
   border: 2px solid #ccc; /* Adjust border thickness and color */
   border-radius: 40px; /* Adjust the roundness of the corners */
   padding: 1em; /* Add some padding inside the border */  
-  height: 100px; /* Fixed height */
+  height: 300px; /* Fixed height */
   position: relative; /* Needed for transition */
   overflow: hidden; /* Prevent content from overflowing */
 
-  /* Apply fading effect */
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
-
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+  /* Container for the fading effect */
+  .content-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  }
+  transition: all 0.1s ease-in-out; /* Smooth transition for hover effect */
    
 
   .page__meta {
