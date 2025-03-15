@@ -9,17 +9,11 @@ entries_layout: grid
 
 {% include base_path %}
 
-      
-<div class="grid__wrapper">
-  {% for post in site.portfolio %}
-    {% if forloop.index0 mod 3 == 0 %}
-      <div class="grid__row"> <!-- Start a new row every 3 items -->
-    {% endif %}
-    
-    {% include archive-single.html type="grid" %}
-    
-    {% if forloop.index0 mod 3 == 2 or forloop.last %}
-      </div> <!-- Close the row after every 3 items or at the last item -->
-    {% endif %}
-  {% endfor %}
+ <div class="grid__wrapper">
+{% for post in site.portfolio %}
+  {% include archive-single.html type="grid" %}
+{% endfor %}
 </div>
+
+      
+
