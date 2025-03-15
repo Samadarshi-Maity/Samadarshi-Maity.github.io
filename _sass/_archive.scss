@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .archive {
+  z-index:-1 
   margin-bottom: 2em;
   @include breakpoint($medium) {
     @include span(12 of 12);
@@ -125,7 +126,7 @@
   padding: 1em; /* Add some padding inside the border */  
   /*height: 380px; Fixed height */
   position: relative; /* Needed for transition */
-   
+  z-index:2; 
 
   .page__meta {
     margin: 0 0 4px;
