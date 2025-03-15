@@ -125,11 +125,11 @@
   flex-direction: column;
   align-items: center; /* Center elements inside each grid item */
   text-align: justify;
-  margin-bottom: 1em;
+  margin-bottom: 0em;
   
   gap: 1em; /* Space between grid items */
   border: 2px solid #ccc; /* Adjust border thickness and color */
-  border-radius: 10px; /* Adjust the roundness of the corners */
+  border-radius: 40px; /* Adjust the roundness of the corners */
   padding: 1em; /* Add some padding inside the border */  
 
 
@@ -166,7 +166,7 @@
     .archive__item-excerpt {
       display: block;
       font-size: $type-size-6;
-      text-align: right;
+      text-align: center;
     }
   }
 }
