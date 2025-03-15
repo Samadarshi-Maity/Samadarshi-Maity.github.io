@@ -118,17 +118,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Align items to center */
-  gap: 2em; /* Space between grid items */
-  border: 2px solid #ccc; /* Adjust border thickness and color */
-  border-radius: 10px; /* Adjust the roundness of the corners */
-  padding: 1em; /* Add some padding inside the border */ 
+
 }
 .grid__item {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center elements inside each grid item */
   text-align: justify;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  
+  gap: 1em; /* Space between grid items */
+  border: 2px solid #ccc; /* Adjust border thickness and color */
+  border-radius: 10px; /* Adjust the roundness of the corners */
+  padding: 1em; /* Add some padding inside the border */  
 
 
   .page__meta {
