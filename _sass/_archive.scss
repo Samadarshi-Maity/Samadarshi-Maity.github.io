@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .archive {
+  position:relative; 
   margin-bottom: 2em;
   z-index:1;
   @include breakpoint($medium) {
@@ -133,7 +134,7 @@
   /* Fading effect using pseudo-element */
   &::after {
     z-index: 3; 
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
