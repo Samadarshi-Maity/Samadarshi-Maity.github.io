@@ -4,6 +4,7 @@
 
 .archive {
   margin-bottom: 2em;
+  z-index:1
   @include breakpoint($medium) {
     @include span(12 of 12);
   }
@@ -154,7 +155,7 @@
 
   .archive__item-excerpt {
     text-align: center;
-    z-index= 3; 
+    z-index: 3; 
   }
 
    /* Expand on hover to show full content */
