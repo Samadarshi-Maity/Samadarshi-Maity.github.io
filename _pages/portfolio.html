@@ -11,7 +11,7 @@ entries_layout: grid
 
  <div class="grid__wrapper">
 {% for post in site.portfolio %}
-  {% include archive-single.html type="grid" %}
+  {% include archive-single.html type="grid" limit=2 %}
 {% endfor %}
 </div>
 
