@@ -208,7 +208,7 @@
   &:before {
     display: block;
     content: "";
-    position: relative;
+    position: fixed;
     top: -11px;
     left: calc(50% - 10px);
     width: 0;
@@ -225,7 +225,7 @@
   &:after {
     display: block;
     content: "";
-    position: relative;
+    position: fixed;
     top: -10px;
     left: calc(50% - 10px);
     width: 0;
