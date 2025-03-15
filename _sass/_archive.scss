@@ -118,7 +118,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Align items to center */
-  gap: 1em; /* Space between grid items */
+  gap: 2em; /* Space between grid items */
+  border: 2px solid #ccc; /* Adjust border thickness and color */
+  border-radius: 10px; /* Adjust the roundness of the corners */
+  padding: 1em; /* Add some padding inside the border */ 
 }
 .grid__item {
   display: flex;
