@@ -114,7 +114,33 @@
    ========================================================================== */
 
 .grid__item {
-  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;   
+  align-items: center; /* Center elements inside each grid item */
+  text-align: justify;
+  margin-bottom: 1em;
+  
+  gap: 1em; /* Space between grid items */
+  border: 2px solid #ccc; /* Adjust border thickness and color */
+  border-radius: 40px; /* Adjust the roundness of the corners */
+  padding: 1em; /* Add some padding inside the border */  
+  height: 380px; /* Fixed height */
+  position: relative; /* Needed for transition */
+  overflow: hidden; /* Prevent content from overflowing */
+
+  /* Fading effect using pseudo-element */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; /* Adjust the fading area */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    pointer-events: none; /* Allows interaction with content */
+  }
+  transition: all 0.1s ease-in-out; /* Smooth transition for hover effect */
+   
 
   .page__meta {
     margin: 0 0 4px;
@@ -123,12 +149,22 @@
   .archive__item-title {
     margin-top: 0.5em;
     font-size: $type-size-5;
+    
   }
 
   .archive__item-excerpt {
-    display: none;
+    text-align: center;
   }
 
+   /* Expand on hover to show full content */
+  &:hover {
+    height: auto;
+    max-height: fit-content;
+    mask-image: none;
+    -webkit-mask-image: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  }
+   
   @include breakpoint($small) {
     @include gallery(5 of 10);
     .archive__item-teaser {
@@ -137,21 +173,22 @@
   }
 
   @include breakpoint($medium) {
-    margin-left: 0; /* reset before mixin does its thing*/
-    margin-right: 0; /* reset before mixin does its thing*/
-    @include gallery(2.5 of 10);
+    margin-left: 1em; /* reset before mixin does its thing*/
+    margin-right: 1em; /* reset before mixin does its thing*/
+    @include gallery(3 of 9);
 
     .archive__item-teaser {
-      max-height: 120px;
+      max-height:120px;
     }
 
     .archive__item-excerpt {
       display: block;
       font-size: $type-size-6;
+      text-align: center;
     }
   }
 }
-/*
+
    Features
    ========================================================================== */
 
