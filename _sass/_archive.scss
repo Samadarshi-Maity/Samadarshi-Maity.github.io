@@ -118,20 +118,27 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Align items to center */
-
+  margin-bottom: -0.5em
 }
 .grid__item {
   display: flex;
   flex-direction: column;
   align-items: center; /* Center elements inside each grid item */
   text-align: justify;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   
   gap: 1em; /* Space between grid items */
   border: 2px solid #ccc; /* Adjust border thickness and color */
   border-radius: 40px; /* Adjust the roundness of the corners */
   padding: 1em; /* Add some padding inside the border */  
+  overflow: hidden; /* Prevent content from overflowing */
 
+  /* Apply fading effect */
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0));
+
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+   
 
   .page__meta {
     margin: 0 0 4px;
