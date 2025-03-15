@@ -115,7 +115,16 @@
 
 .grid__item {
   align-items: center; /* Center elements inside each grid item */
-
+  text-align: justify;
+  margin-bottom: 1em;
+  gap: 1em; /* Space between grid items */
+  border: 2px solid #ccc; /* Adjust border thickness and color */
+  border-radius: 40px; /* Adjust the roundness of the corners */
+  padding: 1em; /* Add some padding inside the border */  
+  /*height: 380px; Fixed height */
+  /*position: relative;  Needed for transition */
+  /*z-index:2;*/ 
+   
   .page__meta {
     margin: 0 0 4px;
   }
