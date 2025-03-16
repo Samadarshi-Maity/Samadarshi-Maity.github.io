@@ -124,7 +124,8 @@
   /*height: 380px; Fixed height */
   /*position: relative;  Needed for transition */
   /*z-index:2;*/ 
-   
+
+  transition: all 0.1s ease-in-out;
   .page__meta {
     margin: 0 0 4px;
   }
@@ -163,8 +164,13 @@
     }
   }
 }
-/*
-   Features
+
+.grid__item:hover {
+  border-color: #448c9e; /* New border color on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/*   Features
    ========================================================================== */
 
 .feature__wrapper {
