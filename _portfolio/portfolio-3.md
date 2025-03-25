@@ -82,5 +82,11 @@ We start off by looking at the general problems of raw datasets: like duplicates
 
 ```
 # check if the data has missing values
-data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in 			data.columns]).show()
+data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in data.columns]).show()
 ```
+ We can then check for the number of duplicates in the data as: 
+```python
+# check if the data has duplicates ... count will be more than 1 ... similar to duplicates in pandas.
+data.groupBy(data.columns).count().where(col('count') > 1).show(10)
+```
+
