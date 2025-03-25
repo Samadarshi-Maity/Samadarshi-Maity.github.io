@@ -13,12 +13,12 @@ I have always been fascinated by how the morgage and lending system works. Funda
 However, in today's world is complicated, so it the process of investing. Thus, financial institutions, over a pperiod of time developed a methodologies to systematically compute the risk associated with providing any financial support buy studying the patterns for   
 </p>
 <p align="justify">
-Here, I analyze a credit risk dataset to check if I can use supervised learning strategies for predicting the chances of default. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use sk-learn to perform some supervised learning. I will particularly try Logistic Regression Classifier, bagged tree classsfier using random Forests, K-Nearest Neighbor Search and Support Vector Machines for predicting the defaulting cases. I have added inline codes to describe the process but you can find a notebook that 'RUN-ready' on google colab <a href '...'>here</a>.
+Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a notebook that 'RUN-ready' on Google Colab <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>here</a>.
 </p>
 <p align="justify">
 First, we import all the necessary packages 
-for data manipulation: pypspark, pandas and numpy, Plotting tools: matplotlib and seaborn, supervised ML: scikit-learn-LogisticRegression,  KNeighborsClassifiers, SVM (linear, poly and rbf). We test the quiality of the predictions using these techniques: sklearn-metrics. 
-Before, aplying ML operations, the data has to be preprocessed to make it ready for analysis. For this, we use imputing, column transformation and piplining modules of scikit-learn. 
+for data manipulation: pypspark, pandas and numpy, Plotting tools: matplotlib and seaborn, supervised ML: scikit-learn-LogisticRegression,  KNeighborsClassifiers, SVM (linear, poly and rbf). We test the quality of the predictions using these techniques: sklearn-metrics. 
+Before applying ML operations, the data has to be preprocessed to make it ready for analysis. For this, we use imputing, column transformation, and pipelining modules of scikit-learn. 
 </p>
   ``` python
   # import some packages here
@@ -26,7 +26,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-#  import spark session to create a session
+#  import Spark session to create a session
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 from pyspark import SparkFiles
@@ -72,3 +72,5 @@ data  = spark.read.csv('file://'+SparkFiles.get("credit_risk_dataset.csv"), head
 
 # push the data into pandas format for the api to operate
   ```
+## Understanding the dataset
+
