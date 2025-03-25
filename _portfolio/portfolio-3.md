@@ -51,7 +51,8 @@ from sklearn.pipeline import Pipeline
 <p align="justify">
 We start of by creating a spark session and then load the data from my Github repo as a Pyspark dataframe.
 </p>
-  ```python 
+
+```python 
   
   # Start a pyspark session
 spark = SparkSession \
@@ -74,7 +75,12 @@ data  = spark.read.csv('file://'+SparkFiles.get("credit_risk_dataset.csv"), head
   ```
 ## Understanding the dataset
 
-###### 
-	# check if the data has missing values
-	data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in 			data.columns]).show()
+<p align="justify">
 
+We start off by looking at the general problems of raw datasets: like duplicates and missing values. Depending on the analysis protocols, we can remove the duplicates. For the missing values, we can use several strategies, like filling them with the mean, mode, or median data of the column or leaving them empty altogether. Each of these is implemented ina  specific condition and comes with a set of advantages and disadvantages. E.g., for a population data with a skewed distribution, the 'Mean' value is suited for continuous data but poorly  represents the outliers. On the other hand, 'median' is a better choice for skewed data but is not suitable for continuous data. Finally, we can use more elaborate strategies like KNN or polynomial fits to fill missing values that use other features to guess/predict the most likely value of the missing data, but again, they have their respective flaws.
+</p>
+
+```
+# check if the data has missing values
+data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in 			data.columns]).show()
+```
