@@ -7,3 +7,8 @@ entries_layout: grid
 classes: wide
 ---
 
+```python
+a = b+c
+
+```
+
