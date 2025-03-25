@@ -13,7 +13,7 @@ I have always been fascinated by how the morgage and lending system works. Funda
 However, in today's world is complicated, so it the process of investing. Thus, financial institutions, over a pperiod of time developed a methodologies to systematically compute the risk associated with providing any financial support buy studying the patterns for   
 </p>
 <p align="justify">
-Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a notebook that 'RUN-ready' on Google Colab <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>here</a>.
+Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a 'RUN-ready' <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>notebook</a> on Google Colab.
 </p>
 <p align="justify">
 First, we import all the necessary packages 
@@ -73,4 +73,8 @@ data  = spark.read.csv('file://'+SparkFiles.get("credit_risk_dataset.csv"), head
 # push the data into pandas format for the api to operate
   ```
 ## Understanding the dataset
+
+###### 
+	# check if the data has missing values
+	data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in 			data.columns]).show()
 
