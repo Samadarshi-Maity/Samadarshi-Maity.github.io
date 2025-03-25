@@ -6,17 +6,20 @@ collection: portfolio
 entries_layout: grid
 classes: wide
 ---
-
+<p align="justify">
 I have always been fascinated by how the morgage and lending system works. Fundamentally speaking, all human endeavors to progress as a civilization need resources espcially in form of finance for execution. Whether it is government funding for research, starting a new company to provide a solution/service to the population, or to buold the next breakthrough techonology, everything needs financial resources to succeed. 
-\\
+</p>
+<p align="justify">
 However, in today's world is complicated, so it the process of investing. Thus, financial institutions, over a pperiod of time developed a methodologies to systematically compute the risk associated with providing any financial support buy studying the patterns for   
-\\
+</p>
+<p align="justify">
 Here, I analyze a credit risk dataset to check if I can use supervised learning strategies for predicting the chances of default. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use sk-learn to perform some supervised learning. I will particularly try Logistic Regression Classifier, bagged tree classsfier using random Forests, K-Nearest Neighbor Search and Support Vector Machines for predicting the defaulting cases. I have added inline codes to describe the process but you can find a notebook that 'RUN-ready' on google colab <a href '...'>here</a>.
-\\  
+</p>
+<p align="justify">
 First, we import all the necessary packages 
 for data manipulation: pypspark, pandas and numpy, Plotting tools: matplotlib and seaborn, supervised ML: scikit-learn-LogisticRegression,  KNeighborsClassifiers, SVM (linear, poly and rbf). We test the quiality of the predictions using these techniques: sklearn-metrics. 
 Before, aplying ML operations, the data has to be preprocessed to make it ready for analysis. For this, we use imputing, column transformation and piplining modules of scikit-learn. 
-
+</p>
   ``` python
   # import some packages here
 import numpy as np
@@ -44,9 +47,10 @@ from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 # Develop preprocessing pipeline
 from sklearn.pipeline import Pipeline
-  ```
-  
-  We start of by creating a spark session and then load the data from my Github repo as a pyspark dataframe. 
+```
+<p align="justify">
+We start of by creating a spark session and then load the data from my Github repo as a Pyspark dataframe.
+</p>
   ```python 
   
   # Start a pyspark session
