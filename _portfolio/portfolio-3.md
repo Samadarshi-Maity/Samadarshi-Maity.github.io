@@ -136,16 +136,6 @@ print('sector with most number of default cases', avgloanamount)
 Now we visualise this data as
 </p>
 
-```python
-# perform the plotting operations
-fig, ax1 = plt.subplots(figsize = (5,2))
-sns.barplot(x = 'default_count', y='loan_intent', data=default_count, palette='viridis_r', ax = ax1, hue='loan_intent')
-ax1.set_xlabel('Default Count')
-ax1.set_ylabel('Loan Intent')
-ax2 = ax1.twiny()
-sns.scatterplot(x ='avg_loan_amount', y = 'loan_intent', data=default_summary, color = 'red', ax =  ax2)
-plt.show()
-```
 <p align = 'justify'>
 I think a better way to understand the count of the default cases is by making a pie chart,
 as shown below.... 
