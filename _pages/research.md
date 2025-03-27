@@ -20,17 +20,7 @@ If we confine the rollers in a circular well, we observe that a mixture of activ
 </p>
 
 
-<style>
-  .video-container {
-    width: 50%; /* Set to any percentage or px */
-    max-width: 800px; /* Optional: Prevents the video from being too large */
-    height: auto; /* Ensures aspect ratio is maintained */
-    display: block;
-    margin: 0 auto; /* Centers the video */
-  }
-</style>
-
-<video class="video-container" controls>
+<video class="video-container" controls width="500">
   <source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
