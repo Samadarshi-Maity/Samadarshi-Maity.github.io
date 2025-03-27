@@ -16,5 +16,11 @@ If two or more of these active fluids are mixed, they can homogeneously mix or p
 </p>
 
 <p align="justify">
-If we confine the rollers in a circular well, we observe that a mixture of active fluids spontaneously demixes. I explain this phase-separation behavior in detail using experimental and analytical techniques in my <a href = 'https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.178304'>article</a> published in the <b>Physical Review Letters</b>, which is a (Q1) physics journals. 
+If we confine the rollers in a circular well, we observe that a mixture of active fluids spontaneously demixes. I explain this phase-separation behavior in detail using experimental and analytical techniques in my <a href = 'https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.131.178304'>article</a> published in the <b>Physical Review Letters</b>, which is a (Q1) physics journal. You can watch this beautiful, spontaneous demixing in the video below
 </p>
+<! --------------------- Video code block -------width = '500' height = '500'------------------>
+		
+    <video class="video-container"  controls>
+        <source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
