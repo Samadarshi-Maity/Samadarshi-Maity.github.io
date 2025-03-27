@@ -20,6 +20,6 @@ If we confine the rollers in a circular well, we observe that a mixture of activ
 </p>
 
 <video class="video-container"  controls>
-<source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4">
+<source src="/images/KNN_/BinaryDemixing_final.mp4" type="video/mp4" width="320" >
 Your browser does not support the video tag.
 </video>
