@@ -206,9 +206,9 @@ Usually, there is a tradeoff between the precision and the recall. However, depe
 </p>
 
 <p align = 'justify'>
-I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification, and Support Vector machines (SVM), which perform better on imbalanced datasets. I tested 3 different kernels of SVM, the linear, polynomial (n-3), and the RBF, commonly called as the Gaussian kernel. Their implementation is shown in the code below
-
-```python 
+I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification, and Support Vector machines (SVM), which perform better on imbalanced datasets. I tested 3 different kernels of SVM, the linear, polynomial (n-3), and the RBF, commonly called the Gaussian kernel. Their implementation is shown in the code below
+</p>
+```
 # testing logistic regression 	
 logistic_classifier = LogisticRegression(random_state =42)
 logistic_classifier.fit(X_train, y_train)
@@ -218,7 +218,50 @@ ypred = logistic_classifier.predict(X_test)
 print('accuracy', accuracy_score(y_test, ypred))
 print('confusion matrix', confusion_matrix(y_test, ypred))
 print('classification report', classification_report(y_test, ypred))
+# instantiate the random forest classifier
+random_forest_classifier = RandomForestClassifier(random_state = 42)
+random_forest_classifier.fit(X_train, y_train)
+ypred = random_forest_classifier.predict(X_test)
 
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# instantiate and test the random forest classifier
+knn_classifier = KNeighborsClassifier()
+knn_classifier.fit(X_train, y_train)
+ypred = knn_classifier.predict(X_test)
+
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the linear SVC
+svm_clf = svm.LinearSVC() # linear kernal and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the poly SVC
+svm_clf = svm.SVC(kernel= 'poly', degree = 3) # polynmomial kernal and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the rbf SVC
+svm_clf = svm.SVC(kernel= 'rbf') # rbf and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
 ```
 
 <p align = 'justify'>
