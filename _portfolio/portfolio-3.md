@@ -179,7 +179,7 @@ categorical_transformer = Pipeline(steps = [
 ('onehot', OneHotEncoder(handle_unknown = 'ignore'))       # one-hot encoding
 ])
 
-# create a preprocessing object with all the features into it...
+# create a preprocessing object with all the features in it...
 preprocessor = ColumnTransformer(
 transformers = [
 ('num', numerical_transformer, numeric_features),
@@ -199,14 +199,14 @@ Once the data is correctly preprocessed, we can split the data into a training a
 X_train, X_test, y_train, y_test = train_test_split(X_precessed, y, test_size = 0.2, random_state = 42)
 ``` 
 <p align = 'justify'>
-For each ML technique, first an object is created, then fitted with the training data, and finally use the test data to benchmark its predictive power. Then, we use the metrics module to map the accuracy, confusion matrix, and the classification report. The accuracy, as the name suggests, provides the predictive accuracy. The confusion matrix provides the class-wise performance, i.e., how much each class was correctly predicted and how much the model confused the prediction with the other class. It also indicates the precision and the recall of the prediction. The accuracy of the prediction is lost either in the form of precision or in the form of recall. Precision can naievely thought of as how precise the predictions are whereas recall is how many of the actual cases were correctly identified. 
+For each ML technique, first an object is created, then fitted with the training data, and finally used on the test data to benchmark its predictive power. Then, we use the metrics module to map the accuracy, confusion matrix, and the classification report. The accuracy, as the name suggests, provides the predictive accuracy. The confusion matrix provides the class-wise performance, i.e., how much each class was correctly predicted and how much the model confused the prediction with the other class. It also indicates the precision and the recall of the prediction. The accuracy of the prediction is lost either in the form of precision or in the form of recall. Precision canbe  naively thought of as how precise the predictions are, whereas recall is how many of the actual cases were correctly identified. 
 </p>
 <p align = 'justify'>
-Usually there is a tradeoff between the precision and the recall. However depending on the objective of the prediction we can optimise this tradeoff. For e.g., if we want to detect some critical illness, we would want the lowest possible recall. This means a large number of false positives cases might be reported. Howeever, we can preform additional screening to subsequently remove these cases. Another example can be in the field of finance where oen would want to detect fraud. Low recall is needed to catch any fraud case.
+Usually, there is a tradeoff between the precision and the recall. However, depending on the objective of the prediction, we can optimise this tradeoff. E.g., if we want to detect some critical illness, we would want the lowest possible recall. This means a large number of false positive cases might be reported. However, we can perform additional screening to subsequently remove these cases. Another example can be in the field of finance, where one would want to detect fraud. Low recall is needed to catch any fraud case.
 </p>
 
 <p align = 'justify'>
-I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification and Support Vector machines (SVM) which perform better on imbalanced datasets. I tested 3 different kernels of SVm , the linear, polynomial (n-3) and the rbf, commonly called as the gaussian kernel. Their implementation is shown in the code below
+I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification, and Support Vector machines (SVM), which perform better on imbalanced datasets. I tested 3 different kernels of SVM, the linear, polynomial (n-3), and the RBF, commonly called as the Gaussian kernel. Their implementation is shown in the code below
 
 ```python 
 # testing logistic regression 	
