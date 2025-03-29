@@ -110,7 +110,7 @@ plt.ylabel('Loan % Income', size=18)
 plt.show()
 ```
 <p align="center">
-  <img src="https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/raw/main/images/Credit_Risk_Assessment/boxplot.png" height="400">
+  <img src="/images/Credit_Risk_Assessment/boxplot.png" height="400">
 </p>
 
 <p align= 'justify'>
@@ -141,6 +141,13 @@ print('sector with most number of default cases', avgloanamount)
 <p align = 'justify'>
 A better way to understand the count of the default cases is by making a pie chart,
 as shown below. 
+</p>
+
+/images/KNN_/
+
+<p align="center">
+  <img src="/images/Credit_Risk_Assessment/barplot.png" height="400">
+  <img src="/images/Credit_Risk_Assessment/piechart.png" height="400">
 </p>
 
 ## Predicting Defaults using Supervised Learning.
