@@ -148,8 +148,8 @@ as shown below.
 
 
 <div style="display: flex; align-items: center;">  
-<img src="/images/Credit_Risk_Assessment/barplot.png" height="200">
-<img src="/images/Credit_Risk_Assessment/piechart.png" height="200">
+<img src="/images/Credit_Risk_Assessment/barplot.png" height="50">
+<img src="/images/Credit_Risk_Assessment/piechart.png" height="50">
 </div>
 
 ## Predicting Defaults using Supervised Learning.
