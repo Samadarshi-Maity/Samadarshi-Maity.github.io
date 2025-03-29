@@ -141,17 +141,17 @@ print('sector with largest principle defaulted',default_summary)
 avgloanamount = default_summary.sort_values(by= 'avg_loan_amount', ascending = False)
 print('sector with most number of default cases', avgloanamount)
 ```
+
+<div style="display: flex; align-items: center;">  
+<img src="/images/Credit_Risk_Assessment/barplot.png" height="200">
+</div>
 <p align = 'justify'>
 A better way to understand the count of the default cases is by making a pie chart,
 as shown below. 
 </p>
-
-
 <div style="display: flex; align-items: center;">  
-<img src="/images/Credit_Risk_Assessment/barplot.png" height="50">
-<img src="/images/Credit_Risk_Assessment/piechart.png" height="50">
+<img src="/images/Credit_Risk_Assessment/piechart.png" height="100">
 </div>
-
 ## Predicting Defaults using Supervised Learning.
 <p align = 'justify'>
 The most important step before performing any predictive analysis is to preprocess the data to prepare it for analysis.
