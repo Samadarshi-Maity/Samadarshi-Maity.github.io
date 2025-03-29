@@ -3,7 +3,7 @@ title: "Supervised Learning for Credit Risk Assessment"
 excerpt: "A simple, step-by-step assessment of credit risk on a credit dataset. The data exploration uses Pyspark and Pandas, and ML implementation uses Scikit-learn.
 <br>
 <br>
-<img src = '/images/Credit_Risk_Assessment/teaser_final.jpeg.jpg'"
+<img src = '/images/Credit_Risk_Assessment/teaser_final.jpeg.jpg'>"
 collection: portfolio
 entries_layout: grid
 classes: wide
