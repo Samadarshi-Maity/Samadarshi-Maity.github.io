@@ -7,13 +7,13 @@ entries_layout: grid
 classes: wide
 ---
 <p align="justify">
-I have always been fascinated by how the morgage and lending system works. Fundamentally speaking, all human endeavors to progress as a civilization need resources espcially in form of finance for execution. Whether it is government funding for research, starting a new company to provide a solution/service to the population, or to buold the next breakthrough techonology, everything needs financial resources to succeed. 
+I have always been fascinated by how the mortgage and lending system works. Fundamentally speaking, all human endeavors to progress as a civilization need resources, especially in the form of finance, for execution. Whether it is government funding for research, starting a new company to provide a solution/service to the population, or building the next breakthrough technology, everything needs financial resources to succeed. 
 </p>
 <p align="justify">
-However, in today's world is complicated, so it the process of investing. Thus, financial institutions, over a pperiod of time developed a methodologies to systematically compute the risk associated with providing any financial support buy studying the patterns for   
+However, today's world is complicated, so the process of investing is. Thus, financial institutions, developed a methodology to systematically compute the risk associated with providing any financial support by studying the patterns for   
 </p>
 <p align="justify">
-Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using Pyspark. Pyspark also also easy data exploration like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a 'RUN-ready' <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>notebook</a> on Google Colab.
+Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using PySpark. Pyspark makes data exploration quite easy, like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a 'RUN-ready' <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>notebook</a> on Google Colab.
 </p>
 <p align="justify">
 First, we import all the necessary packages 
@@ -87,7 +87,7 @@ We start by looking at the general problems of raw datasets, like duplicates and
 <p align='justify'>
 The code block below shows the number of missing data points in each column using PySpark. Pyspark needs a bit longer syntax than pandas, where we can simply write `pd.DataFrame(data.isna().sum()).T`
 </p>	
-```
+```python
 # check if the data has missing values
 data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in data.columns]).show()
 ```
