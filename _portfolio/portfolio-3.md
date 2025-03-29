@@ -208,7 +208,7 @@ Usually there is a tradeoff between the precision and the recall. However depend
 <p align = 'justify'>
 I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification and Support Vector machines (SVM) which perform better on imbalanced datasets. I tested 3 different kernels of SVm , the linear, polynomial (n-3) and the rbf, commonly called as the gaussian kernel. Their implementation is shown in the code below
 
-``` python 
+```python 
 # testing logistic regression 	
 logistic_classifier = LogisticRegression(random_state =42)
 logistic_classifier.fit(X_train, y_train)
