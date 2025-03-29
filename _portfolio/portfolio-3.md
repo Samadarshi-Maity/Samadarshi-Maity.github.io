@@ -109,7 +109,10 @@ plt.xlabel('Loan Status', size = 18)
 plt.ylabel('Loan % Income', size=18)
 plt.show()
 ```
-... add figure ..
+<p align="center">
+  <img src="https://github.com/Samadarshi-Maity/Samadarshi-Maity.github.io/raw/main/images/Credit_Risk_Assessment/boxplot.png" height="400">
+</p>
+
 <p align= 'justify'>
 The box plot shows the existence of a certain amount of imbalance in the data.
 </p>
