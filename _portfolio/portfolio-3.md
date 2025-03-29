@@ -20,7 +20,8 @@ First, we import all the necessary packages
 for data manipulation: pypspark, pandas and numpy, Plotting tools: matplotlib and seaborn, supervised ML: scikit-learn-LogisticRegression,  KNeighborsClassifiers, SVM (linear, poly and rbf). We test the quality of the predictions using these techniques: sklearn-metrics. 
 Before applying ML operations, the data has to be preprocessed to make it ready for analysis. For this, we use imputing, column transformation, and pipelining modules of scikit-learn. 
 </p>
-  ``` python
+
+``` python
   # import some packages here
 import numpy as np
 import matplotlib.pyplot as plt
@@ -48,6 +49,7 @@ from sklearn.compose import ColumnTransformer
 # Develop preprocessing pipeline
 from sklearn.pipeline import Pipeline
 ```
+
 <p align="justify">
 We start of by creating a spark session and then load the data from my Github repo as a Pyspark dataframe.
 </p>
@@ -114,7 +116,7 @@ The box plot shows the existence of a certain amount of imbalance in the data.
 
 ## Data Exploration: Observing the sector-wise default cases
 <p align = 'justify'>
-What is quite interesting is to understand the number of  default cases in each sector and the typical loan amount for such cases. For this, we use the pandas groupby library to create sector-wise groups and find the mean and count of each aggregate. I use pandas for this wrangling step since I will use it later to plot in seaborn, which is available only in pandas.
+Understanding the number of default cases in each sector and the typical loan amount for such cases is quite interesting. For this, we use the pandas groupby library to create sector-wise groups and find the mean and count of each aggregate. I use pandas for this wrangling step since I will use it later to plot in Seaborn, which is available only in pandas.
 </p>
 ```python
 # extract out the cases where the default has occurred for different types of loans
@@ -132,15 +134,143 @@ print('sector with largest principle defaulted',default_summary)
 avgloanamount = default_summary.sort_values(by= 'avg_loan_amount', ascending = False)
 print('sector with most number of default cases', avgloanamount)
 ```
+
 <p align = 'justify'>
-Now we visualise this data as
+A better way to understand the count of the default cases is by making a pie chart,
+as shown below. 
+</p>
+
+## Predicting Defaults using Supervised Learning.
+<p align = 'justify'>
+The most important step before performing any predictive analysis is to preprocess the data to prepare it for analysis.
+They can have several types of imperfections like: duplicates, missing values, unnormalised data columns, to name a few. Also, they might exist in a format that is difficult to use for predictive analysis, like non-numerical classes for categorical data.  
+These elements are present in nearly all raw data; hence, nearly every raw dataset needs some form of transformation to increase its usability. 
 </p>
 
 <p align = 'justify'>
-I think a better way to understand the count of the default cases is by making a pie chart,
-as shown below.... 
+We shall use the following scheme to address the shortcomings in our current dataset: <br>
+1. Missing values shall be replaced with the median values since these parameters show a skewed distribution and have a significant amount of outliers. <br>
+2. We remove the means of each parameter and scale the variance to 1. <br>
+3. Convert  the categorical data into numerical format using One-hot Encoding.<br> 
+<br>
+These pre-processing steps can be very easily implemented using the <b>pipeline</b> module of scikit-learn as shown below.
 </p>
 
+```python
+
+# Create the data sets and transform, normalise and split the data
+X = data_pds[['person_age', 'person_income', 'person_emp_length', 'loan_amnt', 'loan_int_rate','person_home_ownership', 'loan_intent', 'cb_person_default_on_file']]
+y = data_pds['loan_status']
+X = X.drop(columns = ['loan_amnt'])
+
+# The data that are in numbers format
+numeric_features = ['person_age', 'person_income', 'person_emp_length', 'loan_int_rate']
+
+# The data that is in the form of category
+categorical_features = ['person_home_ownership', 'loan_intent', 'cb_person_default_on_file']
+
+numerical_transformer = Pipeline(steps = [
+('imputer', SimpleImputer(strategy = 'median')),
+('scaler', StandardScaler())
+])
+
+categorical_transformer = Pipeline(steps = [
+('imputer', SimpleImputer(strategy = 'most_frequent')),    # use the mode to replace the missing values
+('onehot', OneHotEncoder(handle_unknown = 'ignore'))       # one-hot encoding
+])
+
+# create a preprocessing object with all the features into it...
+preprocessor = ColumnTransformer(
+transformers = [
+('num', numerical_transformer, numeric_features),
+('cat', categorical_transformer, categorical_features)
+])
+
+X_precessed = preprocessor.fit_transform(X)
+categorical_columns  = preprocessor.transformers_[1][1]['onehot'].get_feature_names_out(categorical_features)
+all_columns = numeric_features + list(categorical_columns)
+```
+<p align = 'justify'>
+Once the data is correctly preprocessed, we can split the data into a training and a testing set, setting a particular random state for consistency.
+</p>
+
+```python
+# split the data into train and test
+X_train, X_test, y_train, y_test = train_test_split(X_precessed, y, test_size = 0.2, random_state = 42)
+``` 
+<p align = 'justify'>
+For each ML technique, first an object is created, then fitted with the training data, and finally use the test data to benchmark its predictive power. Then, we use the metrics module to map the accuracy, confusion matrix, and the classification report. The accuracy, as the name suggests, provides the predictive accuracy. The confusion matrix provides the class-wise performance, i.e., how much each class was correctly predicted and how much the model confused the prediction with the other class. It also indicates the precision and the recall of the prediction. The accuracy of the prediction is lost either in the form of precision or in the form of recall. Precision can naievely thought of as how precise the predictions are whereas recall is how many of the actual cases were correctly identified. 
+</p>
+<p align = 'justify'>
+Usually there is a tradeoff between the precision and the recall. However depending on the objective of the prediction we can optimise this tradeoff. For e.g., if we want to detect some critical illness, we would want the lowest possible recall. This means a large number of false positives cases might be reported. Howeever, we can preform additional screening to subsequently remove these cases. Another example can be in the field of finance where oen would want to detect fraud. Low recall is needed to catch any fraud case.
+</p>
+
+<p align = 'justify'>
+I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification and Support Vector machines (SVM) which perform better on imbalanced datasets. I tested 3 different kernels of SVm , the linear, polynomial (n-3) and the rbf, commonly called as the gaussian kernel. Their implementation is shown in the code below
+
+``` python 
+# testing logistic regression 	
+logistic_classifier = LogisticRegression(random_state =42)
+logistic_classifier.fit(X_train, y_train)
+
+ypred = logistic_classifier.predict(X_test)
+
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# instantiate the random forest classifier
+random_forest_classifier = RandomForestClassifier(random_state = 42)
+random_forest_classifier.fit(X_train, y_train)
+ypred = random_forest_classifier.predict(X_test)
+
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# instantiate the random forest classifier
+knn_classifier = KNeighborsClassifier()
+knn_classifier.fit(X_train, y_train)
+ypred = knn_classifier.predict(X_test)
+
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the linear SVC
+svm_clf = svm.LinearSVC() # linear kernal and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the poly SVC
+svm_clf = svm.SVC(kernel= 'poly', degree = 3) # polynmomial kernal and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+
+# here we try the rbf SVC
+svm_clf = svm.SVC(kernel= 'rbf') # rbf and 1:1 weights
+svm_clf.fit(X_train, y_train)
+
+ypred = svm_clf.predict(X_test)
+print('accuracy', accuracy_score(y_test, ypred))
+print('confusion matrix', confusion_matrix(y_test, ypred))
+print('classification report', classification_report(y_test, ypred))
+```
+
+<p align = 'justify'>
+Finally, we can tabulate the performance of each of these methods:
+</p>
+
+	
+	
 
 
 
