@@ -85,10 +85,14 @@ We start by looking at the general problems of raw datasets, like duplicates and
 </p>
 
 <p align='justify'>
-The code block below shows the number of missing data points in each column using PySpark. Pyspark needs a bit longer syntax than pandas, where we can simply write `pd.DataFrame(data.isna().sum()).T`
+The code block below shows the number of missing data points in each column using PySpark. Pyspark needs a bit longer syntax than pandas, where
 </p>	
+
 ```python
-# check if the data has missing values
+# We can simply write `pd.DataFrame(data.isna().sum()).T in pandas to find
+# the missing values .....
+
+# Check if the data has missing values using pyspark
 data.select([count(when(isnan(c) | col(c).isNull(), c)).alias(c) for c in data.columns]).show()
 ```
  We can then check for the number of duplicates in the data as: 
@@ -98,29 +102,27 @@ data.groupBy(data.columns).count().where(col('count') > 1).show(10)
 ```
 ## Imbalance in data set
 <p align='justify'>
-Generally speaking, the dataset is imbalanced if the classes present in the dataset do not exist in the right proportions. In our case, we have two clear classes: defaulted nd non-defaulted cases 
+Generally speaking, the dataset is imbalanced if the classes present in the dataset do not exist in the right proportions. In our case, we have two clear classes: defaulted nd non-defaulted cases, where there is a clear imbalance between the data set  
 </p>
-``` python
-# make a box plot
-plt.figure(figsize = (5,3) )
-sns.boxplot(x = 'loan_status', y = 'loan_percent_income', data = data_pds, color = 'magenta')
 
-plt.xlabel('Loan Status', size = 18)
-plt.ylabel('Loan % Income', size=18)
-plt.show()
+```python
+val = data.groupby('loan_status').count()
+print('the imbalance in the dataset is:', val.select('count').collect()[0][0]/val.select('count').collect()[1][0])
 ```
+
+# Relationship between loan-to-income ratio and default
+<p align='justify'>
+One obvious pattern that can be anticipated is the fact that if a greater loan is taken against the income, the probability of default is higher. We can verify this as shown in the plot below. 
+</p>
 <p align="center">
   <img src="/images/Credit_Risk_Assessment/boxplot.png" height="400">
 </p>
 
-<p align= 'justify'>
-The box plot shows the existence of a certain amount of imbalance in the data.
-</p>
-
 ## Data Exploration: Observing the sector-wise default cases
 <p align = 'justify'>
-Understanding the number of default cases in each sector and the typical loan amount for such cases is quite interesting. For this, we use the pandas groupby library to create sector-wise groups and find the mean and count of each aggregate. I use pandas for this wrangling step since I will use it later to plot in Seaborn, which is available only in pandas.
+Understanding the number of default cases in each sector and the typical loan amount for such cases is quite interesting. For this, we use the pandas groupby library to create sector-wise groups and find the mean and count of each aggregate. I use pandas for this wrangling step since I will use it later to plot in Seaborn, which is available only in pandas, and it is much easier than using pyspark.
 </p>
+
 ```python
 # extract out the cases where the default has occurred for different types of loans
 default_cases = data_pds[data_pds['loan_status']==1]
@@ -137,18 +139,16 @@ print('sector with largest principle defaulted',default_summary)
 avgloanamount = default_summary.sort_values(by= 'avg_loan_amount', ascending = False)
 print('sector with most number of default cases', avgloanamount)
 ```
-
 <p align = 'justify'>
 A better way to understand the count of the default cases is by making a pie chart,
 as shown below. 
 </p>
 
-/images/KNN_/
 
-<p align="center">
-  <img src="/images/Credit_Risk_Assessment/barplot.png" height="400">
-  <img src="/images/Credit_Risk_Assessment/piechart.png" height="400">
-</p>
+<div style="display: flex; align-items: center;">  
+<img src="/images/Credit_Risk_Assessment/barplot.png" height="400">
+<img src="/images/Credit_Risk_Assessment/piechart.png" height="400">
+</div>
 
 ## Predicting Defaults using Supervised Learning.
 <p align = 'justify'>
