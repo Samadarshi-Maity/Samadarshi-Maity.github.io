@@ -1,7 +1,9 @@
 ---
 title: "Supervised Learning for Credit Risk Assessment"
 excerpt: "A simple, step-by-step assessment of credit risk on a credit dataset. The data exploration uses Pyspark and Pandas, and ML implementation uses Scikit-learn.
-"
+<br>
+<br>
+<img src = '/images/Credit_Risk_Assessment/teaser_final.jpeg.jpg'"
 collection: portfolio
 entries_layout: grid
 classes: wide
@@ -10,7 +12,7 @@ classes: wide
 I have always been fascinated by how the mortgage and lending system works. Fundamentally speaking, all human endeavors to progress as a civilization need resources, especially in the form of finance, for execution. Whether it is government funding for research, starting a new company to provide a solution/service to the population, or building the next breakthrough technology, everything needs financial resources to succeed. 
 </p>
 <p align="justify">
-However, today's world is complicated, so the process of investing is. Thus, financial institutions, developed a methodology to systematically compute the risk associated with providing any financial support by studying the patterns for   
+However, today's world is complicated, so the process of investing is. Thus, financial institutions developed a methodology to systematically compute the risk associated with providing any financial support by studying the patterns for   
 </p>
 <p align="justify">
 Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using PySpark. Pyspark makes data exploration quite easy, like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a 'RUN-ready' <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>notebook</a> on Google Colab.
@@ -146,8 +148,8 @@ as shown below.
 
 
 <div style="display: flex; align-items: center;">  
-<img src="/images/Credit_Risk_Assessment/barplot.png" height="400">
-<img src="/images/Credit_Risk_Assessment/piechart.png" height="400">
+<img src="/images/Credit_Risk_Assessment/barplot.png" height="200">
+<img src="/images/Credit_Risk_Assessment/piechart.png" height="200">
 </div>
 
 ## Predicting Defaults using Supervised Learning.
@@ -218,7 +220,8 @@ Usually, there is a tradeoff between the precision and the recall. However, depe
 <p align = 'justify'>
 I test four differernt 4 different techniques: Logistic regression, Random forests, K-Nearest neighbor classification, and Support Vector machines (SVM), which perform better on imbalanced datasets. I tested 3 different kernels of SVM, the linear, polynomial (n-3), and the RBF, commonly called the Gaussian kernel. Their implementation is shown in the code below
 </p>
-```
+
+```python
 # testing logistic regression 	
 logistic_classifier = LogisticRegression(random_state =42)
 logistic_classifier.fit(X_train, y_train)
