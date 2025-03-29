@@ -219,50 +219,6 @@ print('accuracy', accuracy_score(y_test, ypred))
 print('confusion matrix', confusion_matrix(y_test, ypred))
 print('classification report', classification_report(y_test, ypred))
 
-# instantiate the random forest classifier
-random_forest_classifier = RandomForestClassifier(random_state = 42)
-random_forest_classifier.fit(X_train, y_train)
-ypred = random_forest_classifier.predict(X_test)
-
-print('accuracy', accuracy_score(y_test, ypred))
-print('confusion matrix', confusion_matrix(y_test, ypred))
-print('classification report', classification_report(y_test, ypred))
-
-# instantiate the random forest classifier
-knn_classifier = KNeighborsClassifier()
-knn_classifier.fit(X_train, y_train)
-ypred = knn_classifier.predict(X_test)
-
-print('accuracy', accuracy_score(y_test, ypred))
-print('confusion matrix', confusion_matrix(y_test, ypred))
-print('classification report', classification_report(y_test, ypred))
-
-# here we try the linear SVC
-svm_clf = svm.LinearSVC() # linear kernal and 1:1 weights
-svm_clf.fit(X_train, y_train)
-
-ypred = svm_clf.predict(X_test)
-print('accuracy', accuracy_score(y_test, ypred))
-print('confusion matrix', confusion_matrix(y_test, ypred))
-print('classification report', classification_report(y_test, ypred))
-
-# here we try the poly SVC
-svm_clf = svm.SVC(kernel= 'poly', degree = 3) # polynmomial kernal and 1:1 weights
-svm_clf.fit(X_train, y_train)
-
-ypred = svm_clf.predict(X_test)
-print('accuracy', accuracy_score(y_test, ypred))
-print('confusion matrix', confusion_matrix(y_test, ypred))
-print('classification report', classification_report(y_test, ypred))
-
-# here we try the rbf SVC
-svm_clf = svm.SVC(kernel= 'rbf') # rbf and 1:1 weights
-svm_clf.fit(X_train, y_train)
-
-ypred = svm_clf.predict(X_test)
-print('accuracy', accuracy_score(y_test, ypred))
-print('confusion matrix', confusion_matrix(y_test, ypred))
-print('classification report', classification_report(y_test, ypred))
 ```
 
 <p align = 'justify'>
