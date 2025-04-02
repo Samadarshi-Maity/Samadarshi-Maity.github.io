@@ -12,8 +12,8 @@ classes: wide
 I have always been fascinated by how the mortgage and lending system works. Fundamentally speaking, all human endeavors to progress as a civilization need resources, especially in the form of finance, for execution. Whether it is government funding for research, starting a new company to provide a solution/service to the population, or building the next breakthrough technology, everything needs financial resources to succeed. 
 </p>
 <p align="justify">
-However, today's world is complicated, so the process of investing is. Thus, financial institutions developed a methodology to systematically compute the risk associated with providing any financial support by studying the defaulting patterns of the borrower. In this blog I will make a simple, step-by-step attempt to show some Unsupervised machine learning methods that can be used to predict defualting patterns from a credit risk data.  
-/p>
+However, today's world is complicated, so the process of investing is. Thus, financial institutions developed a methodology to systematically compute the risk associated with providing any financial support by studying the defaulting patterns of the borrower. In this blog, I will make a simple, step-by-step attempt to show some Unsupervised machine learning methods that can be used to predict defaulting patterns from credit risk data.  
+</p>
 <p align="justify">
 Here, I analyze a credit risk dataset to check if I can use supervised learning strategies to predict default chances. I will first load and explore the data using PySpark. Pyspark makes data exploration quite easy, like pandas. Then we will use scikit-learn to perform some supervised learning. I will mainly try Logistic Regression Classifier, bagged tree classifier using random Forests, K-Nearest Neighbor Search, and Support Vector Machines for predicting the defaulting cases. I have added code blocks to describe the process, but you can find a 'RUN-ready' <a href ='https://colab.research.google.com/drive/1xQtpyV824M2Gl-wsdF8CkGhBHT0KKcxv?usp=sharing'>notebook</a> on Google Colab.
 </p>
