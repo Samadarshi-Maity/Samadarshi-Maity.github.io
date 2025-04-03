@@ -278,9 +278,16 @@ print('classification report', classification_report(y_test, ypred))
 ```
 
 <p align = 'justify'>
-Finally, we can tabulate the performance of each of these methods:
+Finally, we can tabulate the performance of each of these methods as follows: 
 </p>
 
+| Model                            | Accuracy   |  Precision | Recall  |  F1 Score | 
+| -------------------------------- | ---------- | ---------- | ------- | --------- | 
+| Logistic Regression              | 2016       |            |         |           | 
+| Random Forest Classifier         |            |            |         |           | 
+| Linear Support Vector Machine    | 2022       |            |         |           | 
+| Trinomial Support Vector Machine | 2022       |            |         |           | 
+| Gaussian Support Vector Machine  | 2022       |            |         |           | 
 	
 	
 
