@@ -152,7 +152,8 @@ as shown below.
 <div style="display: flex; align-items: center;">  
 <img src="/images/Credit_Risk_Assessment/piechart.png" height="100">
 </div>
-## Predicting Defaults using Supervised Learning.
+
+## Predicting Defaults using Supervised Learning: Data Preprocessing 
 <p align = 'justify'>
 The most important step before performing any predictive analysis is to preprocess the data to prepare it for analysis.
 They can have several types of imperfections like: duplicates, missing values, unnormalised data columns, to name a few. Also, they might exist in a format that is difficult to use for predictive analysis, like non-numerical classes for categorical data.  
@@ -209,9 +210,11 @@ Once the data is correctly preprocessed, we can split the data into a training a
 ```python
 # split the data into train and test
 X_train, X_test, y_train, y_test = train_test_split(X_precessed, y, test_size = 0.2, random_state = 42)
-``` 
+```
+
+## Model Training
 <p align = 'justify'>
-For each ML technique, first an object is created, then fitted with the training data, and finally used on the test data to benchmark its predictive power. Then, we use the metrics module to map the accuracy, confusion matrix, and the classification report. The accuracy, as the name suggests, provides the predictive accuracy. The confusion matrix provides the class-wise performance, i.e., how much each class was correctly predicted and how much the model confused the prediction with the other class. It also indicates the precision and the recall of the prediction. The accuracy of the prediction is lost either in the form of precision or in the form of recall. Precision canbe  naively thought of as how precise the predictions are, whereas recall is how many of the actual cases were correctly identified. 
+For each ML technique, first an object is created, then fitted with the training data, and finally used on the test data to benchmark its predictive power. Then, we use the metrics module to map the accuracy, confusion matrix, and the classification report. The accuracy, as the name suggests, provides the predictive accuracy. The confusion matrix provides the class-wise performance, i.e., how much each class was correctly predicted and how much the model confused the prediction with the other class. It also indicates the precision and the recall of the prediction. The accuracy of the prediction is lost either in the form of precision or in the form of recall. Precision can be  naively thought of as how precise the predictions are, whereas recall is how many of the actual cases were correctly identified. 
 </p>
 <p align = 'justify'>
 Usually, there is a tradeoff between the precision and the recall. However, depending on the objective of the prediction, we can optimise this tradeoff. E.g., if we want to detect some critical illness, we would want the lowest possible recall. This means a large number of false positive cases might be reported. However, we can perform additional screening to subsequently remove these cases. Another example can be in the field of finance, where one would want to detect fraud. Low recall is needed to catch any fraud case.
@@ -277,19 +280,23 @@ print('confusion matrix', confusion_matrix(y_test, ypred))
 print('classification report', classification_report(y_test, ypred))
 ```
 
+## Model Evaluation  
 <p align = 'justify'>
 Finally, we can tabulate the performance of each of these methods as follows: 
 </p>
 
 | Model                            | Accuracy   |  Precision | Recall  |  F1 Score | 
 | -------------------------------- | ---------- | ---------- | ------- | --------- | 
-| Logistic Regression              | 2016       |            |         |           | 
-| Random Forest Classifier         |            |            |         |           | 
-| Linear Support Vector Machine    | 2022       |            |         |           | 
-| Trinomial Support Vector Machine | 2022       |            |         |           | 
-| Gaussian Support Vector Machine  | 2022       |            |         |           | 
+| Logistic Regression              |   0.82     |    0.69    |  0.34   |   0.46    | 
+| Random Forest Classifier         |   0.85     |    0.75    |  0.51   |   0.61    | 
+| Linear Support Vector Machine    |   0.82     |    0.73    |  0.27   |   0.39    | 
+| Trinomial Support Vector Machine |   0.84     |    0.82    |  0.33   |   0.47    | 
+| Gaussian Support Vector Machine  |   0.84     |    0.84    |  0.34   |   0.49    | 
 	
 	
+<p align='justify'>
+The Accuracy of all models is similar, with Random Forest classifier and non-linear SVMs performing better than the rest. The SVM with Gaussian kernel has the highest precision. For recall, again, Random Forest Classifier did the best and so is its F1 score. Overall, Random Forest performed better than all other models. However, I will take these metrics with a pinch of salt since nearly every model has a very poor F1 score for predicting default cases, and Random Forest performs decently. This is primarily due to the imbalance in the dataset and the best strategy would be to make the weights balanced while training the models.  
+</p>
 
 
 
