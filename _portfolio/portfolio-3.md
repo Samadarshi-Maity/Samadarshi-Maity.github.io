@@ -58,12 +58,11 @@ We start of by creating a spark session and then load the data from my Github re
 
 ```python 
   
-  # Start a pyspark session
+  # Start a Pyspark session and build two threads.
 spark = SparkSession \
     .builder \
-    .appName("Python Spark SQL basic example") \
-    .master("local[2]") \
-    .config("spark.some.config.option", "some-value") \
+    .appName("Pyspark for Credit Risk Assessment") \
+    .master("local[2]") \ 
     .getOrCreate()
 	
 	# load the data from the url
