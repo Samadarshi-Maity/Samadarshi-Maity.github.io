@@ -13,7 +13,7 @@ Hello!! Thank you for stopping by. I am Samadarshi (pronounced as some-other-she
 Outside work, you can find me reading a book in a quiet corner or playing my classical guitar. I also enjoy travelling and spending quality time with my friends. I also love explaining complex concepts by breaking them down to a layman's level, i.e., using minimum prerequisites. Check out the <a href= 'https://samadarshi-maity.github.io/portfolio/'>projects</a> section, where I attempt to explain common statistical inferencing, computational, and general mathematical models/problems using simple examples and tools.  
 </p>
 <p align="justify">
-I have a deep interest in volunteering for social and environmental causes. I currently volunteer for the <a href= 'https://voedselbankleiden.nl/'> Leiden Food Bank</a>. I also volunteer for <a href = 'https://correlaid.nl/'>CorrelAid NL</a> and Statistics without Borders: these organizations provide pro bono data and analytics services to NGOs that do not have such capabilities.
+I have a deep interest in volunteering for social and environmental causes. I currently volunteer for the <a href= 'https://www.voedselbankutrecht.nl/'> Utrecht Food Bank</a>. I also volunteer for <a href = 'https://correlaid.nl/'>CorrelAid NL</a> and Statistics without Borders: these organizations provide pro bono data and analytics services to NGOs that do not have such capabilities.
 </p>
 <p align="justify">
 Please feel free to reach out to me if you have any questions or if you would like to discuss anything of mutual interest. 
