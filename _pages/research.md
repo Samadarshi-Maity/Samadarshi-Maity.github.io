@@ -6,9 +6,9 @@ author_profile: true
 
 ---
 <p align="justify">
-My research work primarily focuses on the experimental investigation of active polar fluids that are driven out of equilibrium through an 'active' drive. I build these so-called 'fluids' using micron-sized spherical particles suspended in oil that 'flow' together, hence termed 'active fluid'. 
+My research work primarily focuses on the investigation of active polar fluids that are driven out of equilibrium through an 'active' drive. I build these so-called 'fluids' using micron-sized spherical particles suspended in oil that 'flow' together, hence termed 'active fluid'. 
 </p>
-<p align="justify">The particles are activated using a D.C. electric field (around a range of 3V/micron), causing them to exhibit a persistent rolling motion. This electro-rotation was first observed by a scientist named 'Quincke' and hence called as Quincke rollers. As the rollers move/propel, they generate hydrodynamamic perturbations, which cause the neighbouring rollers to reorient and coordinate their mutual direction of motion. This leads to the swarming of rollers that show macroscopic direction motion, which is popularly called 'flocking' behavior. Yes, the same flocking behavior that is seen in cattle, birds, and fish. When millions of such rollers are assembled, the flocks turn in spontaneous flows with broken rotational symmetry, which we call <I>active flows</I>. 
+<p align="justify">The particles are activated using a D.C. electric field (around a range of 3V/micron), causing them to exhibit a persistent rolling motion. This electro-rotation was first observed by a scientist named 'Quincke' and hence called Quincke rollers. As the rollers move/propel, they generate hydrodynamic perturbations, which cause the neighbouring rollers to reorient and coordinate their mutual direction of motion. This leads to the swarming of rollers that show macroscopic direction motion, which is popularly called 'flocking' behavior. Yes, the same flocking behavior that is seen in cattle, birds, and fish. When millions of such rollers are assembled, the flocks turn in spontaneous flows with broken rotational symmetry, which we call <I>active flows</I>. 
 </p> 
 
 <p align="justify">
