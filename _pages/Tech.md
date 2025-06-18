@@ -14,7 +14,7 @@ The following sketch shows my data processing workflow (data pipeline). The 3D b
 
 ## Data Collection
 <p align="justify">
-As mentioned before, I observed millions of colloidal particles, and these particles move very fast given their size of a few microns ... almost in the order of 1mm/s. Thus, high-speed imaging is necessary to study them (up to 1k frames per sec). I use <a href = 'https://www.ximea.com/'> XIMEA</a> CMOS cameras coupled to a PCIe reader for transferring images to a computer memory.  
+As mentioned before, I observed millions of colloidal particles, and these particles move very fast, given their size of a few microns ... almost in the order of 1mm/s. Thus, high-speed imaging is necessary to study them (up to 1k frames per sec). I use <a href = 'https://www.ximea.com/'> XIMEA</a> CMOS cameras coupled to a PCIe reader for transferring images to a computer memory.  
 </p>
 
 ## Data sizes
@@ -30,7 +30,7 @@ I use state-of-the-art statistical methods and advanced computational workflows 
 
 ## Deep learning:
 <p align="justify">
-In the second Year of my PhD, I realised that I needed to develop better strategies to identify the particles, and the traditional methods for particle detection would not suffice for fine measurements to extract weak correlation and Fourier modes. Hence, I developed Convolutional Neural Network architectures that are lightweight and fast, as well as accurately detect highly overlapping particles with unprecedented accuracy. Based on this success, I have started devloping an open-source project to develop fast, all-purpose models, particularly catering to my research community who commonly deal with such systems and regularly face such issues. Please check out this <a ref = 'https://github.com/Samadarshi-Maity/CNN-Particle-Detection'> project</a>
+In the second Year of my PhD, I realised that I needed to develop better strategies to identify the particles, and the traditional methods for particle detection would not suffice for fine measurements to extract weak correlation and Fourier modes. Hence, I developed Convolutional Neural Network architectures that are lightweight and fast, as well as accurately detect highly overlapping particles with unprecedented accuracy. Based on this success, I have started devloping an open-source project to develop fast, all-purpose models, particularly catering to my research community who commonly deal with such systems and regularly face such issues. Please check out this <a href = 'https://github.com/Samadarshi-Maity/CNN-Particle-Detection'> project</a>
 </p>
 
 ## Debugging and error handling
