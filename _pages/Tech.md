@@ -28,7 +28,7 @@ In my Ph.D. so far, I have generated more than <b>30 TB of publication-quality d
 I use state-of-the-art statistical methods and advanced computational workflows to extract meaningful correlations in inter-particle dynamics from TeraBytes of experimental data.  I primarily use MATLAB, Python (Pandas, Matplotlib, Pyspark, Pytorch, and some other subsidiary packages), and ImageJ (and PyImageJ) to process the data and perform statistical analyses. A large amount of the computation effort involve matrix manipulations (to build correlation fields), hence better done on the GPUs. (I prefer using Pytorch for these than CuPy, although Pytorch is natively built for deep learning.) I use sklearn for particle tracking using the KNN algorithm enhanced using a "Kalman Filter", you can read about it(without the Kalman filter) in a blog on the <b>portfolio</b> section of this website.
 </p>
 
-Deep learning:
+## Deep learning:
 <p align="justify">
 IN the second Year of my PhD, I realised that I need to develop better strategies to identify the particles, and the traditional methods to detect the particles would not suffice for fine measurements to extract weak correlation and Fourier modes. Hence, I developed Convolutional Neural Network architectures that are lightweight and fast, as well as accurately detect highly overlapping particles with unprecedented accuracy. Based on this success, I have started devloping an open-source project to develop fast, all-purpose models, particularly catering to my research community who commonly deal with such systems and regularly face such issues. Please check out this <a ref = 'https://github.com/Samadarshi-Maity/CNN-Particle-Detection'> project</a>
 </p>
